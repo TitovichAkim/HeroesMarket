@@ -1,0 +1,13 @@
+key	RU	EN
+ImprovementDescription.0ProfitX2TarotCards	Прибыль в 2 раза больше: _Гадальные карты	Increased profit x2: _Tarot cards
+ImprovementDescription.1ProfitX2BallOfYarn	Прибыль в 2 раза больше: _Навигационные клубки	Increased profit x2: _Navigation clews
+ImprovementDescription.2ProfitX2SpellBook	Прибыль в 2 раза больше: _Самоучители по черной магии	Increased profit x2: _Teach-yourself black magic guides
+ImprovementDescription.3ProfitX2LovePotion	Прибыль в 2 раза больше: _Приворотные зелья	Increased profit x2: _ Love potions
+ImprovementDescription.4ProfitX2CarnivorousPlant	Прибыль в 2 раза больше: _Растительная охранная система	Increased profit x2: _Plant protection system
+ImprovementDescription.5ProfitX2VoodooDoll	Прибыль в 2 раза больше: _Куклы вуду	Increased profit x2: _Voodoo dolls
+ImprovementDescription.6TimeX2TarotCards	Продажа в 2 раза быстрее: _Гадальные карты	Quick sale х2: _Tarot cards
+ImprovementDescription.7TimeX2BallOfYarn	Продажа в 2 раза быстрее: _Навигационные клубки	Quick sale х2: _ Navigation clews
+ImprovementDescription.8TimeX2SpellBook	Продажа в 2 раза быстрее: _Самоучители по черной магии	Quick sale х2: _Teach-yourself black magic guides
+ImprovementDescription.9TimeX2LovePotion	Продажа в 2 раза быстрее: _Приворотные зелья	Quick sale х2: _Love potions
+ImprovementDescription.10TimeX2CarnivorousPlant	Продажа в 2 раза быстрее: _Растительная охранная система	Quick sale х2: _Plant protection system
+ImprovementDescription.11TimeX2VoodooDoll	Продажа в 2 раза быстрее: _Куклы вуду	Quick sale х2: _Voodoo dolls

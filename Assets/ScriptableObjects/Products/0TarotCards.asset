@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395f20622943d00488fd57b6061ba12d, type: 3}
+  m_Name: 0TarotCards
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 8498ae953530a0742a22f28756663e69, type: 3}
+  cardsBackground: {fileID: 21300000, guid: 17311568c89f9224b8140acdb6e390fd, type: 3}
+  productName: TarotCards
+  initialCost: 3.74
+  costMultiplier: 1.07
+  initialTime: 0.6
+  initialRevenue: 1

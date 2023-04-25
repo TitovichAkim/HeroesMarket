@@ -1,0 +1,13 @@
+key	RU	EN
+ImprovementName.0ProfitX2TarotCards	Голографический дизайн колоды	Holographic deck design
+ImprovementName.1ProfitX2BallOfYarn	Позолоченные нити	Gilded threads
+ImprovementName.2ProfitX2SpellBook	Защитные чары против добра	Protection charms against good
+ImprovementName.3ProfitX2LovePotion	Вытяжка из любовных стихов	Love Poem Extract
+ImprovementName.4ProfitX2CarnivorousPlant	Сухие корма с гоблинским мясом	Dry foods with goblin meat
+ImprovementName.5ProfitX2VoodooDoll	Прочные иглы с лунным камнем	Durable needles with moonstone
+ImprovementName.6TimeX2TarotCards	Усилители связи с призраками	Ghost Communication Boosters
+ImprovementName.7TimeX2BallOfYarn	Функция поиска легендарного героя	Legendary Hero search function
+ImprovementName.8TimeX2SpellBook	Чернила из толченого рога единорога	Inks made from crushed unicorn horn
+ImprovementName.9TimeX2LovePotion	Перья Купидона	Cupid's feathers
+ImprovementName.10TimeX2CarnivorousPlant	Укрепленные намордники	Reinforced muzzles
+ImprovementName.11TimeX2VoodooDoll	Сборник проклятий в подарок	Collection of curses as a gift

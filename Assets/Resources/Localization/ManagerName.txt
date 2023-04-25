@@ -1,0 +1,7 @@
+key	RU	EN
+ManagerName.0AutomaticSaleTarotCards	Мадам Мистик	Madame Mystique
+ManagerName.1AutomaticSaleBallOfYarn	Ариадна	Ariadne
+ManagerName.2AutomaticSaleSpellBook	Темный колдун	Shadow Mage
+ManagerName.3AutomaticSaleLovePotion	Фея-крестная	Fairy Godmother
+ManagerName.4AutomaticSaleCarnivorousPlant	Гниющий садовник	Rotting Gardener
+ManagerName.5AutomaticSaleVoodooDoll	Верховный жрец	Highlord
