@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135aace93b494164c90e3816b24621cd, type: 3}
+  m_Name: 1SmallArms
+  m_EditorClassIdentifier: 
+  roomName: 1SmallArms
+  openButtonSprite: {fileID: 21300000, guid: 506688936999f6f4fb160a33f916c158, type: 3}
+  closedButtonSprite: {fileID: 21300000, guid: d2ee6addec92c58439e906bca72a5de2, type: 3}
+  products:
+  - {fileID: 11400000, guid: 73560f5738fb413478e37d7de7eeec60, type: 2}
+  - {fileID: 11400000, guid: 3556a42d751131248a9b06bc9761e43a, type: 2}
+  - {fileID: 11400000, guid: 695696bebbd133a44a40edd9df8b197b, type: 2}
+  - {fileID: 11400000, guid: ab266ab564d8ab0498736333277dba9d, type: 2}
+  - {fileID: 11400000, guid: 5875d09bb56b96a468c24b6d85e65c82, type: 2}
+  - {fileID: 11400000, guid: aa8c3b84f5a01584fb50d1920d8c1fb1, type: 2}
+  - {fileID: 11400000, guid: aca26f7d1db0f944a81e9164a2cf0f0d, type: 2}
+  - {fileID: 11400000, guid: 5e2a798402b48db43bb675a9481eb15d, type: 2}
+  - {fileID: 11400000, guid: 995529aab9a77e74d947781473edb860, type: 2}
+  managers:
+  - {fileID: 11400000, guid: cc63a00de64a8944cb981e20885041b6, type: 2}
+  - {fileID: 11400000, guid: dfef9e4a72764ed46858f8cc5967484a, type: 2}
+  - {fileID: 11400000, guid: 4cb51553bbfe67d4da891fca081bc755, type: 2}
+  - {fileID: 11400000, guid: ab6e092d4a1c0f745852fa927462d156, type: 2}
+  - {fileID: 11400000, guid: b67d0fdd653327c4097791ca9c4adba7, type: 2}
+  - {fileID: 11400000, guid: f648f00648933f246b30725d65934cf2, type: 2}
+  - {fileID: 11400000, guid: 81635752552f27b48a1cb3e26abffab6, type: 2}
+  - {fileID: 11400000, guid: a1c4cc21fe8b603409f0b8531561cc03, type: 2}
+  - {fileID: 11400000, guid: e7e67602e8b8e8f45922715ff8452991, type: 2}
+  improvements: []

@@ -22,7 +22,6 @@ public class MenuManager : MonoBehaviour
     {
         currentTime = DateTime.Now - DateTime.Parse(PlayerPrefs.GetString("lastSessionEndTime", DateTime.Now.ToString()));
         timeSinceExit = (float)currentTime.TotalSeconds;
-        Debug.Log(Time.realtimeSinceStartup);
         if (timeSinceExit > 6)
         {
             CollectTheReward();
@@ -36,15 +35,15 @@ public class MenuManager : MonoBehaviour
         timerText.text = $"You were not in the game: {$"{(int)currentTime.TotalHours}:{currentTime.TotalMinutes % 60:00}:{currentTime.TotalSeconds % 60:00}"}";
 
 
-        foreach (ProductPanelManager productPanelManager in shopManager.productPanelsArray)
-        {
-            if (productPanelManager.manager)
-            {
-                float êewardMultiplier = timeSinceExit/productPanelManager.productSO.initialTime * productPanelManager.multiplierInitialTime;
-                _reward += productPanelManager.productRevenue * êewardMultiplier;
-                ReturnPanel.SetActive(true);
-            }
-        }
+        //foreach (ProductPanelManager productPanelManager in shopManager.productPanelsArray)
+        //{
+        //    if (productPanelManager.manager)
+        //    {
+        //        float êewardMultiplier = timeSinceExit/productPanelManager.productSO.initialTime * productPanelManager.multiplierInitialTime;
+        //        _reward += productPanelManager.productRevenue * êewardMultiplier;
+        //        ReturnPanel.SetActive(true);
+        //    }
+        //}
         NumberFormatter.FormatAndRedraw(_reward, rewardText);
         StartCoroutine(SaveTheMoment());
     }

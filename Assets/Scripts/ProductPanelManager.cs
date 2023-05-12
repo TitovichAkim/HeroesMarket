@@ -128,8 +128,9 @@ public class ProductPanelManager : MonoBehaviour
 
     public void StartPanel ()
     {
+        Debug.Log("Панель - старт");
         productIcon.sprite = productSO.icon;
-        cardBackground.GetComponent<Image>().sprite = productSO.cardsBackground;
+        //cardBackground.GetComponent<Image>().sprite = productSO.cardsBackground;
 
 
         if(PlayerPrefs.GetInt($"{productSO.productName}productInvestments") == 0 && productSO.productName == "TarotCards")
@@ -221,7 +222,7 @@ public class ProductPanelManager : MonoBehaviour
 
     private void RedrawThePanel ()
     {
-        productLevelText.text = productInvestments.ToString();
+        productLevelText.text = $"Lvl. {productInvestments}";
         timerText.text = $"{productSO.initialTime / multiplierInitialTime}";
 
         productRevenue = _productInvestments * productSO.initialRevenue * multiplierProductRevenue;
@@ -240,7 +241,7 @@ public class ProductPanelManager : MonoBehaviour
 
     public void RedrawUpgradeButton ()
     {
-        Localizator.LocalizedText(buyNumberText, $"General.Buy", 0, $"\nx {_upgradesNumber}");
+        // Localizator.LocalizedText(buyNumberText, $"General.Buy", 0, $"\nx {_upgradesNumber}");
         upgradeButton.interactable = shopManager.coins >= _upgradeCost;
     }
 }

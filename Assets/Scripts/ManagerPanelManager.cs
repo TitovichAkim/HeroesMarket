@@ -1,21 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ManagerPanelManager : MonoBehaviour
+public class ManagerPanelManager:MonoBehaviour
 {
 
     public ShopManager shopManager;
 
     public Image managersIconImage;
+    public Image buyButton—urtain;
     public Text managerNameText;
-    public Text managersDescriptionText;
+    public Text managerClassText;
+    //public Text managersDescriptionText;
     public Text managerActionText;
-    public Text ManagerActionTargetText;
+    //public Text ManagerActionTargetText;
     public Text managerCostText;
-    public Text buyButtonText;
+    //public Text buyButtonText;
     public Button buyButton;
+    public GameObject buyButtonGO;
 
     public ManagersSO _managerSO;
+
 
     private bool _managerState;
 
@@ -48,6 +52,8 @@ public class ManagerPanelManager : MonoBehaviour
     {
         LocalisationTexts();
         managersIconImage.sprite = managerSO.managersIcon;
+        managerNameText.text = managerSO.managersPublicName;
+        managerClassText.text = managerSO.managersClass;
 
         NumberFormatter.FormatAndRedraw(managerSO.managersCost, managerCostText);
     }
@@ -58,7 +64,7 @@ public class ManagerPanelManager : MonoBehaviour
 
     public void BuyManager ()
     {
-        if (!managerState)
+        if(!managerState)
         {
             if(shopManager.coins >= managerSO.managersCost)
             {
@@ -70,35 +76,41 @@ public class ManagerPanelManager : MonoBehaviour
     }
     public void ActivateManager ()
     {
-        if (managerState)
+        if(managerState)
         {
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+            buyButton.enabled = false;
+            buyButton—urtain.gameObject.SetActive(true);
+            this.gameObject.GetComponent<Image>().color = Color.white;
             _UpdateManagersStateArray(this);
         }
     }
 
     private void _UpdateManagersStateArray (ManagerPanelManager panelManager)
     {
-    for(int i = 0; i < shopManager.managerPanelsArray.Length; i++)
-    {
-        if (shopManager.managerPanelsArray[i] == panelManager)
+        for(int i = 0; i < shopManager.managerPanelsArray.Length; i++)
         {
-            shopManager.productPanelsArray[i].manager = true;
-            shopManager.managersStatesArray[i] = managerState;
-            shopManager.managersStatesArray = shopManager.managersStatesArray;
-        }
+            for(int j = 0; j < shopManager.managerPanelsArray[i].Length; j++)
+            {
+                if(shopManager.managerPanelsArray[i][j] == panelManager)
+                {
+                    shopManager.productPanelsArray[i][j].manager = true;
+                    shopManager.managersStatesArray[i][j] = managerState;
+                    shopManager.managersStatesArray = shopManager.managersStatesArray;
+                }
+            }
         }
     }
 
     private void LocalisationTexts ()
     {
-        Localizator.LocalizedText(buyButtonText, $"General.Buy");
-        Localizator.LocalizedText(managerNameText, $"ManagerName.{managerSO.managersName}");
-        Text[] descriprionTexts = {managersDescriptionText, managerActionText, ManagerActionTargetText};
-        for(int i = 0; i < descriprionTexts.Length; i++)
-        {
-            Localizator.LocalizedText(descriprionTexts[i], $"ManagerDescription.{managerSO.managersName}", i);
-        }
+        //Localizator.LocalizedText(buyButtonText, $"General.Buy");
+        //Localizator.LocalizedText(managerNameText, $"ManagerName.{managerSO.managersName}");
+        //Text[] descriprionTexts = {managersDescriptionText, managerActionText, ManagerActionTargetText};
+        //for(int i = 0; i < descriprionTexts.Length; i++)
+        //{
+        //    Localizator.LocalizedText(descriprionTexts[i], $"ManagerDescription.{managerSO.managersName}", i);
+        //}
         //Localizator.LocalizedText(managersDescriptionText, $"ManagerDescription.{managerSO.managersName}");
     }
 }

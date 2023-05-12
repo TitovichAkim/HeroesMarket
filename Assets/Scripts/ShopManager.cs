@@ -1,22 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopManager : MonoBehaviour
+public class ShopManager:MonoBehaviour
 {
+    public GameObject roomsPanelGO;
     public GameObject productsPanel;
     public GameObject managersPanel;
     public GameObject improvementsPanel;
+    public GameObject factoryesPanel;
 
     public Text numbersOfCoinsFloatText;
-   // public Text numbersOfCoinsstringText;
     public Text upgradesNumberText;
     public Image[] ProductIconsOnTheShelf;
 
-    public ProductPanelManager[] productPanelsArray;
-    public ManagerPanelManager[] managerPanelsArray;
+
+    public ProductPanelManager[][] productPanelsArray;
+    public ManagerPanelManager[][] managerPanelsArray;
     public ImprovementPanelManager[] improvementPanelArray;
 
-    [SerializeField]private bool[] _managersStatesArray;
+    [SerializeField]private bool[][] _managersStatesArray;
     [SerializeField]private bool[] _improvementsStatesArray;
 
     private int[] _upgradeNumbers = {1, 10, 25, 100};
@@ -38,7 +40,7 @@ public class ShopManager : MonoBehaviour
             _RedrawUpgradeButtons();
         }
     }
-    public bool[] managersStatesArray
+    public bool[][] managersStatesArray
     {
         get
         {
@@ -63,46 +65,47 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    public void Start ()
-    {
-
-    }
-
     public void StartShop ()
     {
         coins = PlayerPrefs.GetFloat("Coin");
-        _managersStatesArray = new bool[managerPanelsArray.Length];
+        _managersStatesArray = new bool[managerPanelsArray.Length][];
+        for(int i = 0; i < managerPanelsArray.Length; i++)
+        {
+            _managersStatesArray[i] = new bool[managerPanelsArray[i].Length];
+        }
         _improvementsStatesArray = new bool[improvementPanelArray.Length];
         _RedrawUpgradeButtons();
         _LoadManagersState();
-        _LoadImprovementsStates();
-    } 
+        //_LoadImprovementsStates();
+    }
 
     public void UpgradeIndexUp ()
     {
         _upgradeIndex++;
-        if (_upgradeIndex > 3)
+        if(_upgradeIndex > 3)
         {
             _upgradeIndex = 0;
         }
         upgradesNumberText.text = $"x {_upgradeNumbers[_upgradeIndex]}";
-        foreach(ProductPanelManager prodMan in productPanelsArray)
-        {
-            prodMan.upgradesNumber = _upgradeNumbers[_upgradeIndex];
-
-        }
+        //foreach(ProductPanelManager prodMan in productPanelsArray)
+        //{
+        //    prodMan.upgradesNumber = _upgradeNumbers[_upgradeIndex];
+        //}
     }
 
     public void SaveManagersStates ()
     {
         for(int i = 0; i < managersStatesArray.Length; i++)
         {
-            int state = 0;
-            if(managersStatesArray[i])
+            for(int j = 0; j < managersStatesArray[i].Length; j++)
             {
-                state = 1;
+                int state = 0;
+                if(managersStatesArray[i][j])
+                {
+                    state = 1;
+                }
+                PlayerPrefs.SetInt($"{managerPanelsArray[i][j].managerSO.managersName}.Manager", state);
             }
-            PlayerPrefs.SetInt($"{managerPanelsArray[i].managerSO.managersName}.Manager", state);
         }
     }
     public void SaveImprovementsStates ()
@@ -120,17 +123,17 @@ public class ShopManager : MonoBehaviour
 
     public void RedrawIconsOnTheShelf ()
     {
-        for(int i = 0; i < ProductIconsOnTheShelf.Length; i++)
-        {
-            if (productPanelsArray[i] != null)
-            {
-                ProductIconsOnTheShelf[i].enabled = productPanelsArray[i].productInvestments > 0;
-            } 
-            else
-            {
-                break;
-            }
-        }
+        //for(int i = 0; i < ProductIconsOnTheShelf.Length; i++)
+        //{
+        //    if(productPanelsArray[i] != null)
+        //    {
+        //        ProductIconsOnTheShelf[i].enabled = productPanelsArray[i].productInvestments > 0;
+        //    }
+        //    else
+        //    {
+        //        break;
+        //    }
+        //}
     }
     public void ApplyImprovementState (int type, int target, int index)
     {
@@ -138,10 +141,10 @@ public class ShopManager : MonoBehaviour
         switch(type)
         {
             case 0:
-                productPanelsArray[target].multiplierProductRevenue *= improvementsValue;
+                //productPanelsArray[target].multiplierProductRevenue *= improvementsValue;
                 break;
             case 1:
-                productPanelsArray[target].multiplierInitialTime *= improvementsValue;
+                //productPanelsArray[target].multiplierInitialTime *= improvementsValue;
                 break;
         }
         improvementsStatesArray[index] = true;
@@ -149,52 +152,62 @@ public class ShopManager : MonoBehaviour
     }
     private void _RedrawUpgradeButtons ()
     {
-        foreach(ProductPanelManager prodMan in productPanelsArray)
+        foreach(ProductPanelManager[] prodMans in productPanelsArray)
         {
-            if (prodMan)
+            foreach(ProductPanelManager prodMan in prodMans)
             {
-                prodMan.RedrawUpgradeButton();
-            } 
-            else
+                if(prodMan != null)
+                {
+                    prodMan.RedrawUpgradeButton();
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+        }
+        foreach(ManagerPanelManager[] managerPanels in managerPanelsArray)
+        {
+            foreach(ManagerPanelManager managerPanel in managerPanels)
             {
-                break;
+                if(managerPanel != null)
+                {
+                    managerPanel.RedrawThePanel();
+                }
+                else
+                {
+                    break;
+                }
             }
         }
-        foreach(ManagerPanelManager managerPanel in managerPanelsArray)
-        {
-            if(managerPanel)
-            {
-                managerPanel.RedrawThePanel();
-            }
-            else
-            {
-                break;
-            }
-        }
-        foreach(ImprovementPanelManager improveMan in improvementPanelArray)
-        {
-            if(improveMan)
-            {
-                improveMan.RedrawThePanel();
-            }
-            else
-            {
-                break;
-            }
-        }
+        //    foreach(ImprovementPanelManager improveMan in improvementPanelArray)
+        //    {
+        //        if(improveMan)
+        //        {
+        //            improveMan.RedrawThePanel();
+        //        }
+        //        else
+        //        {
+        //            break;
+        //        }
+        //    }
     }
 
     private void _LoadManagersState ()
     {
-        for (int i=0; i < managersStatesArray.Length; i++)
+        for(int i = 0; i < managersStatesArray.Length; i++)
         {
-            int state = PlayerPrefs.GetInt($"{managerPanelsArray[i].managerSO.managersName}.Manager");
-            if (state == 1 && i < managerPanelsArray.Length)
+            for(int j = 0; j < managersStatesArray[i].Length; j++)
             {
-                managerPanelsArray[i].managerState = true;
-                if(i < productPanelsArray.Length)
+                int state = PlayerPrefs.GetInt($"{managerPanelsArray[i][j].managerSO.managersName}.Manager");
+                if(state == 1 && j < managerPanelsArray[i].Length)
                 {
-                    productPanelsArray[i].manager = true;
+                    managerPanelsArray[i][j].managerState = true;
+                    if(j < productPanelsArray[i].Length)
+                    {
+                        productPanelsArray[i][j].manager = true;
+                    }
                 }
             }
         }

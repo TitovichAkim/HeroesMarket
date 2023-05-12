@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395f20622943d00488fd57b6061ba12d, type: 3}
+  m_Name: 0Gloves0
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 239bc9d92ad343a4e8572efd4e8bdd5d, type: 3}
+  cardsBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  productName: 0Gloves0
+  initialCost: 1
+  costMultiplier: 2
+  initialTime: 3
+  initialRevenue: 4
