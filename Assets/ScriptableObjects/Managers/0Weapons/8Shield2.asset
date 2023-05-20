@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69cd4b20f167bf4f8a1116367823d9d, type: 3}
   m_Name: 8Shield2
   m_EditorClassIdentifier: 
-  managersIcon: {fileID: 21300000, guid: 36b51f6200bebbb4ba1e1f65550fcf31, type: 3}
-  managersBackIcon: {fileID: 21300000, guid: 4c4c15e4b94a50b44b5c18c3abaa2cf8, type: 3}
-  managersName: 8Shield2
-  managersPublicName: "\u0429\u0438\u0442\u043A\u0438\u043D"
+  managersIcon: {fileID: 21300000, guid: 8cfc587ea1ca1c0408a4db4882f0f28b, type: 3}
+  managersBackIcon: {fileID: 21300000, guid: 8075ecd89bf656046ab5965cca97498a, type: 3}
+  managersName: Shield2
+  managersPublicName: Shield Smith
   managersClass: Artisan
-  managersCost: 1e+18
+  managersCost: 8000000

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,15 +9,17 @@ public class ManagerPanelManager:MonoBehaviour
 
     public Image managersIconImage;
     public Image buyButton—urtain;
-    public Text managerNameText;
-    public Text managerClassText;
+    public Image backgroundImage;
+    public TextMeshProUGUI managerNameText;
+    public TextMeshProUGUI managerClassText;
     //public Text managersDescriptionText;
-    public Text managerActionText;
+    public TextMeshProUGUI managerActionText;
     //public Text ManagerActionTargetText;
-    public Text managerCostText;
+    public TextMeshProUGUI managerCostText;
     //public Text buyButtonText;
     public Button buyButton;
     public GameObject buyButtonGO;
+    public GameObject closedCardBody;
 
     public ManagersSO _managerSO;
 
@@ -83,6 +86,7 @@ public class ManagerPanelManager:MonoBehaviour
             buyButton—urtain.gameObject.SetActive(true);
             this.gameObject.GetComponent<Image>().color = Color.white;
             _UpdateManagersStateArray(this);
+            closedCardBody.SetActive(false);
         }
     }
 

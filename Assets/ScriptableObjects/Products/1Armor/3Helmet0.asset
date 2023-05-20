@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395f20622943d00488fd57b6061ba12d, type: 3}
   m_Name: 3Helmet0
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 9b9d26efe8d582f43a864480217d44a5, type: 3}
+  icon: {fileID: 21300000, guid: 0833663389834e54ab9981cbb88fa656, type: 3}
   cardsBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  productName: 3Helmet0
-  initialCost: 1
-  costMultiplier: 2
-  initialTime: 3
-  initialRevenue: 4
+  productName: Helmet0
+  initialCost: 120
+  costMultiplier: 1.07
+  initialTime: 0.5
+  initialRevenue: 30

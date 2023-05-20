@@ -5,12 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
     public Text[] revenuePanelTexts;
     public Text timerText;
-    public Text rewardText;
+    public TextMeshProUGUI rewardText;
     public ShopManager shopManager;
     public GameObject ReturnPanel;
     public float exitTime;
@@ -35,15 +36,18 @@ public class MenuManager : MonoBehaviour
         timerText.text = $"You were not in the game: {$"{(int)currentTime.TotalHours}:{currentTime.TotalMinutes % 60:00}:{currentTime.TotalSeconds % 60:00}"}";
 
 
-        //foreach (ProductPanelManager productPanelManager in shopManager.productPanelsArray)
-        //{
-        //    if (productPanelManager.manager)
-        //    {
-        //        float êewardMultiplier = timeSinceExit/productPanelManager.productSO.initialTime * productPanelManager.multiplierInitialTime;
-        //        _reward += productPanelManager.productRevenue * êewardMultiplier;
-        //        ReturnPanel.SetActive(true);
-        //    }
-        //}
+        foreach(ProductPanelManager[] productPanelManagers in shopManager.productPanelsArray)
+        {
+            foreach(ProductPanelManager productPanelManager in productPanelManagers)
+            {
+                if(productPanelManager.manager)
+                {
+                    float rewardMultiplier = timeSinceExit/productPanelManager.productSO.initialTime * productPanelManager.multiplierInitialTime;
+                    _reward += productPanelManager.productRevenue * rewardMultiplier;
+                    ReturnPanel.SetActive(true);
+                }
+            }
+        }
         NumberFormatter.FormatAndRedraw(_reward, rewardText);
         StartCoroutine(SaveTheMoment());
     }

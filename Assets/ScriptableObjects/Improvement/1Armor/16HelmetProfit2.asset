@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69609a7c65b6a5149b69f48c5e53e9fd, type: 3}
+  m_Name: 16HelmetProfit2
+  m_EditorClassIdentifier: 
+  improvementsIcon: {fileID: 21300000, guid: 61a8bd30cd303e141b3d57e7ca37302c, type: 3}
+  cardBackImage: {fileID: 21300000, guid: 8075ecd89bf656046ab5965cca97498a, type: 3}
+  improvementsName: HelmetProfit2
+  improvementsCost: 2100000
+  improvementsValue: 2
+  improvementsType: 0
+  improvementsTargetIndex: 5

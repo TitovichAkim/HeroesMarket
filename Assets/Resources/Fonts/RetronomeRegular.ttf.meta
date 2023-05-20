@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3fef45eb4f2ce1f46b3dda432c3f428d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Retronome
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9a2d4cbd1e4f5094ba4474b90e65b4e9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

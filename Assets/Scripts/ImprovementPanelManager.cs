@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,12 +9,13 @@ public class ImprovementPanelManager: MonoBehaviour
 
     public Image improvementIconImage;
     public Image improvementBackgroundImage;
-    public Text improvementNameText;
-    public Text improvementDescriptionText;
-    public Text improvementTypeText;
-    public Text improvementCostText;
-    public Text buyButtonText;
+    public Image improvementTypeImage;
+    public Image buyButton—urtain;
+    public TextMeshProUGUI improvementNameText;
+    public TextMeshProUGUI improvementTypeText;
+    public TextMeshProUGUI improvementCostText;
     public Button buyButton;
+    public GameObject closedCardBody;
 
     public ImprovementSO _improvementSO;
 
@@ -46,15 +48,15 @@ public class ImprovementPanelManager: MonoBehaviour
     public void StartPanel ()
     {
         improvementIconImage.sprite = improvementSO.improvementsIcon;
-
-        Localizator.LocalizedText(buyButtonText, $"General.Buy");
-        Localizator.LocalizedText(improvementNameText, $"ImprovementName.{improvementSO.improvementsName}");
-        Text[] descriptionTexts = { improvementDescriptionText, improvementTypeText };
-        for(int i = 0; i < descriptionTexts.Length; i++)
-        {
-            Localizator.LocalizedText(descriptionTexts[i], $"ImprovementDescription.{improvementSO.improvementsName}", i);
-        }
+        //improvementNameText.text = improvementSO.improvementsName;
+        //Localizator.LocalizedText(improvementNameText, $"ImprovementName.{improvementSO.improvementsName}");
+        //Text[] descriptionTexts = { improvementDescriptionText, improvementTypeText };
+        //for(int i = 0; i < descriptionTexts.Length; i++)
+        //{
+        //    Localizator.LocalizedText(descriptionTexts[i], $"ImprovementDescription.{improvementSO.improvementsName}", i);
+        //}
         NumberFormatter.FormatAndRedraw(improvementSO.improvementsCost, improvementCostText);
+
     }
 
     public void RedrawThePanel ()
@@ -80,11 +82,14 @@ public class ImprovementPanelManager: MonoBehaviour
     {
         for(int i = 0; i < shopManager.improvementPanelArray.Length; i++)
         {
-            if(shopManager.improvementPanelArray[i] == panelManager)
+            for(int j = 0; j < shopManager.improvementPanelArray[i].Length; j++)
             {
-                shopManager.improvementsStatesArray[i] = improvementState;
-                shopManager.ApplyImprovementState(improvementSO.improvementsType, improvementSO.improvementsTargetIndex, i);
-                shopManager.improvementsStatesArray = shopManager.improvementsStatesArray;
+                if(shopManager.improvementPanelArray[i][j] == panelManager)
+                {
+                    shopManager.improvementsStatesArray[i][j] = improvementState;
+                    shopManager.ApplyImprovementState(improvementSO.improvementsType, improvementSO.improvementsTargetIndex, i, j);
+                    shopManager.improvementsStatesArray = shopManager.improvementsStatesArray;
+                }
             }
         }
     }

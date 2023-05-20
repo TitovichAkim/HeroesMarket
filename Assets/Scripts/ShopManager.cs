@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,17 +10,17 @@ public class ShopManager:MonoBehaviour
     public GameObject improvementsPanel;
     public GameObject factoryesPanel;
 
-    public Text numbersOfCoinsFloatText;
+    public TextMeshProUGUI numbersOfCoinsFloatText;
     public Text upgradesNumberText;
     public Image[] ProductIconsOnTheShelf;
 
 
     public ProductPanelManager[][] productPanelsArray;
     public ManagerPanelManager[][] managerPanelsArray;
-    public ImprovementPanelManager[] improvementPanelArray;
+    public ImprovementPanelManager[][] improvementPanelArray;
 
     [SerializeField]private bool[][] _managersStatesArray;
-    [SerializeField]private bool[] _improvementsStatesArray;
+    [SerializeField]private bool[][] _improvementsStatesArray;
 
     private int[] _upgradeNumbers = {1, 10, 25, 100};
     private int _upgradeIndex = 0;
@@ -52,7 +53,7 @@ public class ShopManager:MonoBehaviour
 
         }
     }
-    public bool[] improvementsStatesArray
+    public bool[][] improvementsStatesArray
     {
         get
         {
@@ -68,15 +69,21 @@ public class ShopManager:MonoBehaviour
     public void StartShop ()
     {
         coins = PlayerPrefs.GetFloat("Coin");
+        if (coins == 0)
+        {
+            coins = 5;
+        }
         _managersStatesArray = new bool[managerPanelsArray.Length][];
+        _improvementsStatesArray = new bool[improvementPanelArray.Length][];
         for(int i = 0; i < managerPanelsArray.Length; i++)
         {
             _managersStatesArray[i] = new bool[managerPanelsArray[i].Length];
+            _improvementsStatesArray[i] = new bool[improvementPanelArray[i].Length];
         }
-        _improvementsStatesArray = new bool[improvementPanelArray.Length];
+
         _RedrawUpgradeButtons();
         _LoadManagersState();
-        //_LoadImprovementsStates();
+        _LoadImprovementsStates();
     }
 
     public void UpgradeIndexUp ()
@@ -93,7 +100,7 @@ public class ShopManager:MonoBehaviour
         //}
     }
 
-    public void SaveManagersStates ()
+    public void SaveManagersStates () // Сохранить состояние менеджеров (куплен/не куплен)
     {
         for(int i = 0; i < managersStatesArray.Length; i++)
         {
@@ -108,16 +115,19 @@ public class ShopManager:MonoBehaviour
             }
         }
     }
-    public void SaveImprovementsStates ()
+    public void SaveImprovementsStates () // Сохранить состояния улучшений (куплен/не куплен)
     {
         for(int i = 0; i < improvementsStatesArray.Length; i++)
         {
-            int state = 0;
-            if(improvementsStatesArray[i])
+            for (int j = 0; j < improvementsStatesArray[i].Length; j++)
             {
-                state = 1;
+                int state = 0;
+                if(improvementsStatesArray[i][j])
+                {
+                    state = 1;
+                }
+                PlayerPrefs.SetInt($"{improvementPanelArray[i][j].improvementSO.improvementsName}.Improvement", state);
             }
-            PlayerPrefs.SetInt($"{improvementPanelArray[i].improvementSO.improvementsName}.Improvement", state);
         }
     }
 
@@ -135,22 +145,24 @@ public class ShopManager:MonoBehaviour
         //    }
         //}
     }
-    public void ApplyImprovementState (int type, int target, int index)
+    public void ApplyImprovementState (int type, int target, int indexI, int indexJ)
     {
-        float improvementsValue = improvementPanelArray[index].improvementSO.improvementsValue;
+        float improvementsValue = improvementPanelArray[indexI][indexJ].improvementSO.improvementsValue;
         switch(type)
         {
             case 0:
-                //productPanelsArray[target].multiplierProductRevenue *= improvementsValue;
+                productPanelsArray[indexI][target].multiplierProductRevenue *= improvementsValue;
                 break;
             case 1:
-                //productPanelsArray[target].multiplierInitialTime *= improvementsValue;
+                productPanelsArray[indexI][target].multiplierInitialTime *= improvementsValue;
                 break;
         }
-        improvementsStatesArray[index] = true;
-        improvementPanelArray[index].gameObject.SetActive(false);
+        improvementsStatesArray[indexI][indexJ] = true;
+        improvementPanelArray[indexI][indexJ].buyButtonСurtain.gameObject.SetActive(true);
+        improvementPanelArray[indexI][indexJ].improvementBackgroundImage.color = Color.white;
+        improvementPanelArray[indexI][indexJ].closedCardBody.SetActive(false);
     }
-    private void _RedrawUpgradeButtons ()
+    private void _RedrawUpgradeButtons () // Проверить все параметры и перерисовать панельки
     {
         foreach(ProductPanelManager[] prodMans in productPanelsArray)
         {
@@ -181,17 +193,20 @@ public class ShopManager:MonoBehaviour
                 }
             }
         }
-        //    foreach(ImprovementPanelManager improveMan in improvementPanelArray)
-        //    {
-        //        if(improveMan)
-        //        {
-        //            improveMan.RedrawThePanel();
-        //        }
-        //        else
-        //        {
-        //            break;
-        //        }
-        //    }
+        foreach(ImprovementPanelManager[] improveMans in improvementPanelArray)
+        {
+            foreach(ImprovementPanelManager improveMan in improveMans)
+            {
+                if(improveMan)
+                {
+                    improveMan.RedrawThePanel();
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
     }
 
     private void _LoadManagersState ()
@@ -216,13 +231,17 @@ public class ShopManager:MonoBehaviour
     {
         for(int i = 0; i < improvementsStatesArray.Length; i++)
         {
-            int state = PlayerPrefs.GetInt($"{improvementPanelArray[i].improvementSO.improvementsName}.Improvement");
-            if(state == 1 && i < improvementPanelArray.Length)
+            for(int j = 0; j < improvementsStatesArray[i].Length; j++)
             {
-                int type = improvementPanelArray[i].improvementSO.improvementsType;
-                int targetIndex = improvementPanelArray[i].improvementSO.improvementsTargetIndex;
+                int state = PlayerPrefs.GetInt($"{improvementPanelArray[i][j].improvementSO.improvementsName}.Improvement");
+                Debug.Log(state);
+                if(state == 1 && i < improvementPanelArray.Length)
+                {
+                    int type = improvementPanelArray[i][j].improvementSO.improvementsType;
+                    int targetIndex = improvementPanelArray[i][j].improvementSO.improvementsTargetIndex;
 
-                ApplyImprovementState(type, targetIndex, i);
+                    ApplyImprovementState(type, targetIndex, i, j);
+                }
             }
         }
     }

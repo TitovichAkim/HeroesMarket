@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 906bbd98d61cfeb4587984f77aacf63e, type: 3}
   cardsBackground: {fileID: 21300000, guid: 906bbd98d61cfeb4587984f77aacf63e, type: 3}
-  productName: 5Axe2
-  initialCost: 1
-  costMultiplier: 2
-  initialTime: 3
-  initialRevenue: 4
+  productName: Axe2
+  initialCost: 7000
+  costMultiplier: 1.09
+  initialTime: 6
+  initialRevenue: 5500

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class ProductPanelManager : MonoBehaviour
 {
@@ -10,17 +11,18 @@ public class ProductPanelManager : MonoBehaviour
     public Image productIcon;
     public Image productBackground;
     public Image progressBar;
+    public GameObject closedCardPanel;
     public GameObject cardBackground;
 
     public Button sellProductButton;
     public Button upgradeButton;
 
-    public Text productLevelText;
-    public Text coinsPerSecondText;
+    public TextMeshProUGUI productLevelText;
+    public TextMeshProUGUI coinsPerSecondText;
     public Text buyNumberText;
-    public Text costFloatText;
-    public Text costStringText;
-    public Text timerText;
+    public TextMeshProUGUI costFloatText;
+    public TextMeshProUGUI costStringText;
+    public TextMeshProUGUI timerText;
 
     public ProductsSO _productSO;
 
@@ -144,6 +146,9 @@ public class ProductPanelManager : MonoBehaviour
             {
                 productBackground.enabled = false;
                 sellProductButton.interactable = false;
+            } else
+            {
+                closedCardPanel.SetActive(false);
             }
         }
 
@@ -213,6 +218,7 @@ public class ProductPanelManager : MonoBehaviour
                     StartSellProduct();
                 }
             }
+            closedCardPanel.SetActive(false);
             shopManager.coins -= _upgradeCost;
             productInvestments += _upgradesNumber;
             RedrawThePanel();

@@ -13,6 +13,8 @@ public class WorldFactory:MonoBehaviour
     public GameObject indastryesPanelPrefab;
     public GameObject menuPrefab;
 
+    public Sprite[] improvementTypeImagesArray;
+
     public RoomSetSO[] roomSetSOArray;
     public ProductsSO[] productsSOArray;
     public ManagersSO[] managersSOArray;
@@ -60,11 +62,12 @@ public class WorldFactory:MonoBehaviour
     {
         _ShopManager.productPanelsArray = new ProductPanelManager[roomSetSOArray.Length][];
         _ShopManager.managerPanelsArray = new ManagerPanelManager[roomSetSOArray.Length][];
-        _ShopManager.improvementPanelArray = new ImprovementPanelManager[improvementSOArray.Length];
+        _ShopManager.improvementPanelArray = new ImprovementPanelManager[roomSetSOArray.Length][];
         for(int i = 0; i < roomSetSOArray.Length; i++)
         {
             _ShopManager.productPanelsArray[i] = new ProductPanelManager[roomSetSOArray[i].products.Length];
             _ShopManager.managerPanelsArray[i] = new ManagerPanelManager[roomSetSOArray[i].managers.Length];
+            _ShopManager.improvementPanelArray[i] = new ImprovementPanelManager[roomSetSOArray[i].improvements.Length];
         }
 
 
@@ -75,7 +78,7 @@ public class WorldFactory:MonoBehaviour
     }
     public async Task CollectProducts ()
     {
-        for (int s = 0; s < _roomsPanelManager.Length; s++)
+        for(int s = 0; s < _roomsPanelManager.Length; s++)
         {
             for(int i = 0; i < roomSetSOArray.Length; i++)
             {
@@ -84,7 +87,24 @@ public class WorldFactory:MonoBehaviour
                 CreateRoomButton(productsRoomGO, roomSetSOArray[i], _roomsPanelManager[s].leftPanelGO.transform, _roomsPanelManager[s]);
                 productsRoomGO.GetComponent<AniManager>().roomsPanelManager = _roomsPanelManager[s];
                 Transform roomTransform = productsRoomGO.GetComponent<AniManager>().productPanelsScrollContent.transform;
-                for(int j = 0; j < roomSetSOArray[i].products.Length; j++)
+                int length = 0;
+                switch(s)
+                {
+                    case 0:
+                        length = roomSetSOArray[i].products.Length;
+                        break;
+                    case 1:
+                        length = roomSetSOArray[i].managers.Length;
+                        break;
+                    case 2:
+                        length = roomSetSOArray[i].improvements.Length;
+                        break;
+                    case 3:
+
+                        break;
+                }
+
+                for(int j = 0; j < length; j++)
                 {
                     switch(s)
                     {
@@ -101,9 +121,16 @@ public class WorldFactory:MonoBehaviour
                             manager.shopManager = _ShopManager;
                             _ShopManager.managerPanelsArray[i][j] = manager;
                             manager.managerSO = roomSetSOArray[i].managers[j];
+                            manager.backgroundImage.sprite = manager.managerSO.managersBackIcon;
                             break;
                         case 2:
-
+                            GameObject improvementPanel = Instantiate(improvementsPanelPrefab, roomTransform);
+                            ImprovementPanelManager improvement = improvementPanel.GetComponent<ImprovementPanelManager>();
+                            improvement.shopManager = _ShopManager;
+                            _ShopManager.improvementPanelArray[i][j] = improvement;
+                            improvement.improvementSO = roomSetSOArray[i].improvements[j];
+                            improvement.improvementTypeImage.sprite = improvementTypeImagesArray[improvement.improvementSO.improvementsType];
+                            improvement.improvementBackgroundImage.sprite = improvement.improvementSO.cardBackImage;
                             break;
                         case 3:
 
@@ -130,20 +157,20 @@ public class WorldFactory:MonoBehaviour
     //    }
     //}
 
-    public async Task CollectImprovement ()
-    {
-        for(int i = 0; i < improvementSOArray.Length; i++)
-        {
-            GameObject panel = Instantiate(improvementsPanelPrefab, _ShopManager.improvementsPanel.transform);
-            panel.GetComponent<ImprovementPanelManager>().improvementSO = improvementSOArray[i];
-            ImprovementPanelManager improvement = panel.GetComponent<ImprovementPanelManager>();
-            improvement.shopManager = _ShopManager;
-            _ShopManager.improvementPanelArray[i] = improvement;
-            improvement.improvementBackgroundImage.sprite = improvementBackgroundImages[improvementSOArray[i].improvementsType];
-            improvement.improvementSO = improvementSOArray[i];
-        }
-    }
-    
+    //public async Task CollectImprovement ()
+    //{
+    //    for(int i = 0; i < improvementSOArray.Length; i++)
+    //    {
+    //        GameObject panel = Instantiate(improvementsPanelPrefab, _ShopManager.improvementsPanel.transform);
+    //        panel.GetComponent<ImprovementPanelManager>().improvementSO = improvementSOArray[i];
+    //        ImprovementPanelManager improvement = panel.GetComponent<ImprovementPanelManager>();
+    //        improvement.shopManager = _ShopManager;
+    //        _ShopManager.improvementPanelArray[i] = improvement;
+    //        improvement.improvementBackgroundImage.sprite = improvementBackgroundImages[improvementSOArray[i].improvementsType];
+    //        improvement.improvementSO = improvementSOArray[i];
+    //    }
+    //}
+
     public void CreateRoomButton (GameObject room, RoomSetSO set, Transform parentTransfotm, RoomsPanelManager roomsPM)
     {
         GameObject openRoomButton = Instantiate(openRoomButtonPrefab, parentTransfotm);

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69cd4b20f167bf4f8a1116367823d9d, type: 3}
   m_Name: 8Armor2
   m_EditorClassIdentifier: 
-  managersIcon: {fileID: 21300000, guid: 3712b3df7f2a7d446a1fe01b3eed8737, type: 3}
-  managersBackIcon: {fileID: 21300000, guid: 4c4c15e4b94a50b44b5c18c3abaa2cf8, type: 3}
-  managersName: 8Armor2
-  managersPublicName: "\u0411\u0440\u043E\u043D\u044C\u043A\u0438\u043D"
+  managersIcon: {fileID: 21300000, guid: e4f18eca5ee69c74998ac8d4de48f75b, type: 3}
+  managersBackIcon: {fileID: 21300000, guid: 8075ecd89bf656046ab5965cca97498a, type: 3}
+  managersName: Armor2
+  managersPublicName: 'Armor Smith '
   managersClass: Artisan
-  managersCost: 1
+  managersCost: 24000000

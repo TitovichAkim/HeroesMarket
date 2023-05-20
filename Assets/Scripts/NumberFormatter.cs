@@ -1,12 +1,13 @@
 using System.Globalization;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public static class NumberFormatter
 {
     //static string[] names = { "", "", "", "млрд", "трлн", "квдрлн", "квнтлн", "секстлн", "септлн", "октлн", "нонлн", "децилн", "анд-децилн"};
     static string[] names = { "", "", "", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion"};
-    public static void FormatAndRedraw (float inputNumber, Text floatText, Text stringText = null)
+    public static void FormatAndRedraw (float inputNumber, TextMeshProUGUI floatText, TextMeshProUGUI stringText = null)
     {
         int n = 0;
 
@@ -42,6 +43,5 @@ public static class NumberFormatter
                 floatText.text = $"{inputNumber.ToString("N3", CultureInfo.InvariantCulture)} {names[n]}";
             }
         }
-
     }
 }

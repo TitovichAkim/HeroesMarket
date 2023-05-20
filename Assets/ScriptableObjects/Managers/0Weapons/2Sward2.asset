@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69cd4b20f167bf4f8a1116367823d9d, type: 3}
   m_Name: 2Sward2
   m_EditorClassIdentifier: 
-  managersIcon: {fileID: 21300000, guid: 7084d63886e86254d889822d65a197cb, type: 3}
-  managersBackIcon: {fileID: 21300000, guid: 4c4c15e4b94a50b44b5c18c3abaa2cf8, type: 3}
-  managersName: 2Sward2
-  managersPublicName: "\u041C\u0435\u0447\u043A\u0438\u043D"
+  managersIcon: {fileID: 21300000, guid: 817a541b2ffb43d41bc98ca3906bd8d9, type: 3}
+  managersBackIcon: {fileID: 21300000, guid: 8075ecd89bf656046ab5965cca97498a, type: 3}
+  managersName: Sward2
+  managersPublicName: Sword Smith
   managersClass: Artisan
-  managersCost: 1
+  managersCost: 80000

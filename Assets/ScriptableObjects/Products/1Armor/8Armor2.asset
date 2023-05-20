@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 3712b3df7f2a7d446a1fe01b3eed8737, type: 3}
   cardsBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  productName: 8Armor2
-  initialCost: 1
-  costMultiplier: 2
-  initialTime: 3
-  initialRevenue: 4
+  productName: Armor2
+  initialCost: 210000
+  costMultiplier: 1.09
+  initialTime: 6
+  initialRevenue: 165000

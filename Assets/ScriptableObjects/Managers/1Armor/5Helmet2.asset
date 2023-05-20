@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69cd4b20f167bf4f8a1116367823d9d, type: 3}
   m_Name: 5Helmet2
   m_EditorClassIdentifier: 
-  managersIcon: {fileID: 21300000, guid: 61a8bd30cd303e141b3d57e7ca37302c, type: 3}
-  managersBackIcon: {fileID: 21300000, guid: 4c4c15e4b94a50b44b5c18c3abaa2cf8, type: 3}
-  managersName: 5Helmet2
-  managersPublicName: "\u0428\u043B\u0435\u043C\u043A\u0438\u043D"
+  managersIcon: {fileID: 21300000, guid: 3ce5f408c52f6bd41a03e9ab8b229e34, type: 3}
+  managersBackIcon: {fileID: 21300000, guid: 8075ecd89bf656046ab5965cca97498a, type: 3}
+  managersName: Helmet2
+  managersPublicName: Helmet Smith
   managersClass: Artisan
-  managersCost: 1
+  managersCost: 2400000

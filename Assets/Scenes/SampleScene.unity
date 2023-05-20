@@ -316,9 +316,12 @@ MonoBehaviour:
   openRoomButtonPrefab: {fileID: 5850848721784434209, guid: 5e7363fca3df46f44af59c4a472e08a4, type: 3}
   productsPanelPrefab: {fileID: 2444394727098198600, guid: 3e27beb95ed393e47b8b56781dd97e79, type: 3}
   managersPanelPrefab: {fileID: 2444394727098198600, guid: de24721baa4f68f4c9b0b9347ca094bb, type: 3}
-  improvementsPanelPrefab: {fileID: 674437320136186746, guid: f01c39d8dc4f2ff4e9e1054728a72994, type: 3}
+  improvementsPanelPrefab: {fileID: 2444394727098198600, guid: 7cbec351327e2c24d92bc73e36d6c1ca, type: 3}
   indastryesPanelPrefab: {fileID: 0}
   menuPrefab: {fileID: 4429872028841876153, guid: 79c97dc645312844aa8fa7076afd32b6, type: 3}
+  improvementTypeImagesArray:
+  - {fileID: 21300000, guid: 07792300eae06644fa0de85f8ac1fddd, type: 3}
+  - {fileID: 21300000, guid: a35eeb9f7e3a96f41adb4bd44c9d1f3c, type: 3}
   roomSetSOArray:
   - {fileID: 11400000, guid: 3bd029e03e1f0c842a72d7d2c4597945, type: 2}
   - {fileID: 11400000, guid: 76e5f27990c8e084f901e1d36e731df5, type: 2}

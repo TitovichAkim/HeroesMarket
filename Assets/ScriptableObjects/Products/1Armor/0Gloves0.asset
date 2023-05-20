@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 239bc9d92ad343a4e8572efd4e8bdd5d, type: 3}
   cardsBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  productName: 0Gloves0
-  initialCost: 1
-  costMultiplier: 2
-  initialTime: 3
-  initialRevenue: 4
+  productName: Gloves0
+  initialCost: 12
+  costMultiplier: 1.07
+  initialTime: 0.5
+  initialRevenue: 3

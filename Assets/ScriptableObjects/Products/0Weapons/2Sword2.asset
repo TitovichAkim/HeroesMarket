@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 7084d63886e86254d889822d65a197cb, type: 3}
   cardsBackground: {fileID: 21300000, guid: 7084d63886e86254d889822d65a197cb, type: 3}
-  productName: 2Sword2
-  initialCost: 1
-  costMultiplier: 2
-  initialTime: 3
-  initialRevenue: 4
+  productName: Sword2
+  initialCost: 700
+  costMultiplier: 1.09
+  initialTime: 6
+  initialRevenue: 550
