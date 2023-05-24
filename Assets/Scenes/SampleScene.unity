@@ -218,7 +218,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 1710839463}
   - component: {fileID: 1710839465}
   - component: {fileID: 1710839466}
+  - component: {fileID: 1710839467}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -322,6 +323,7 @@ MonoBehaviour:
   improvementTypeImagesArray:
   - {fileID: 21300000, guid: 07792300eae06644fa0de85f8ac1fddd, type: 3}
   - {fileID: 21300000, guid: a35eeb9f7e3a96f41adb4bd44c9d1f3c, type: 3}
+  trainingManager: {fileID: 1710839467}
   roomSetSOArray:
   - {fileID: 11400000, guid: 3bd029e03e1f0c842a72d7d2c4597945, type: 2}
   - {fileID: 11400000, guid: 76e5f27990c8e084f901e1d36e731df5, type: 2}
@@ -367,3 +369,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScaler: 0
+--- !u!114 &1710839467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710839462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373630b2351419642ad4d6553780bd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: b2575ae7c821a1241a41d4d82e6e14e7, type: 2}
+  shopCanvasGroup: {fileID: 0}
+  traderCanvasGroup: {fileID: 0}
+  traderTextCanvasGroup: {fileID: 0}
+  productBuyButtonCanvasGroup: {fileID: 0}
+  productPanelCanvasGroup: {fileID: 0}
+  managerBuyButtonCanvasGroup: {fileID: 0}
+  improvementBuyButtonCanvasGroup: {fileID: 0}

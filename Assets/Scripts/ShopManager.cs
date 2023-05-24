@@ -9,12 +9,24 @@ public class ShopManager:MonoBehaviour
     public GameObject managersPanel;
     public GameObject improvementsPanel;
     public GameObject factoryesPanel;
+    public GameObject traderGO;
+    public GameObject traderDialogBoxGO;
+    public GameObject traderDialogText;
+
+    public GameObject openProductsButtonGO;
+    public GameObject openManagersButtonGO;
+    public GameObject openImprovementsButtonGO;
+    public GameObject trainingPanelsGO;
+    public GameObject managerTrainingPanel;
+    public GameObject improvementTrainingPanel;
+
 
     public TextMeshProUGUI numbersOfCoinsFloatText;
     public Text upgradesNumberText;
     public Image[] ProductIconsOnTheShelf;
 
 
+    public TrainingManager trainingManager;
     public ProductPanelManager[][] productPanelsArray;
     public ManagerPanelManager[][] managerPanelsArray;
     public ImprovementPanelManager[][] improvementPanelArray;
@@ -39,6 +51,7 @@ public class ShopManager:MonoBehaviour
             NumberFormatter.FormatAndRedraw(_coins, numbersOfCoinsFloatText);
             PlayerPrefs.SetFloat("Coin", _coins);
             _RedrawUpgradeButtons();
+            CheckTheTraining();
         }
     }
     public bool[][] managersStatesArray
@@ -69,7 +82,7 @@ public class ShopManager:MonoBehaviour
     public void StartShop ()
     {
         coins = PlayerPrefs.GetFloat("Coin");
-        if (coins == 0)
+        if(coins == 0)
         {
             coins = 5;
         }
@@ -119,7 +132,7 @@ public class ShopManager:MonoBehaviour
     {
         for(int i = 0; i < improvementsStatesArray.Length; i++)
         {
-            for (int j = 0; j < improvementsStatesArray[i].Length; j++)
+            for(int j = 0; j < improvementsStatesArray[i].Length; j++)
             {
                 int state = 0;
                 if(improvementsStatesArray[i][j])
@@ -234,7 +247,6 @@ public class ShopManager:MonoBehaviour
             for(int j = 0; j < improvementsStatesArray[i].Length; j++)
             {
                 int state = PlayerPrefs.GetInt($"{improvementPanelArray[i][j].improvementSO.improvementsName}.Improvement");
-                Debug.Log(state);
                 if(state == 1 && i < improvementPanelArray.Length)
                 {
                     int type = improvementPanelArray[i][j].improvementSO.improvementsType;
@@ -242,6 +254,22 @@ public class ShopManager:MonoBehaviour
 
                     ApplyImprovementState(type, targetIndex, i, j);
                 }
+            }
+        }
+    }
+
+    public void CheckTheTraining ()
+    {
+        if(trainingManager.trainingStatus != 0)
+        {
+            switch(trainingManager.trainingStatus)
+            {
+                case 3:
+                    if(coins >= 1000)
+                    {
+                        trainingManager.NextStep();
+                    }
+                    break;
             }
         }
     }

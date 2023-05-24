@@ -13,6 +13,7 @@ public class ProductPanelManager : MonoBehaviour
     public Image progressBar;
     public GameObject closedCardPanel;
     public GameObject cardBackground;
+    public GameObject buyButtonGO;
 
     public Button sellProductButton;
     public Button upgradeButton;
@@ -130,7 +131,6 @@ public class ProductPanelManager : MonoBehaviour
 
     public void StartPanel ()
     {
-        Debug.Log("Панель - старт");
         productIcon.sprite = productSO.icon;
         //cardBackground.GetComponent<Image>().sprite = productSO.cardsBackground;
 

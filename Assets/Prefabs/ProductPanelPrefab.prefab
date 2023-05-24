@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 2444394727098198606}
   - component: {fileID: 6545485906981981871}
   - component: {fileID: 7012346472581360573}
+  - component: {fileID: -7847182306929703068}
   m_Layer: 5
   m_Name: ProductPanelPrefab
   m_TagString: Untagged
@@ -512,6 +513,7 @@ MonoBehaviour:
   progressBar: {fileID: 2444394728573024588}
   closedCardPanel: {fileID: 5822689000981878993}
   cardBackground: {fileID: 0}
+  buyButtonGO: {fileID: 2444394727615002137}
   sellProductButton: {fileID: 7012346472581360573}
   upgradeButton: {fileID: 3764303524224302276}
   productLevelText: {fileID: 5140563093392974993}
@@ -577,6 +579,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &-7847182306929703068
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444394727098198600}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2444394727502657550
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +679,7 @@ GameObject:
   - component: {fileID: 2444394727615002142}
   - component: {fileID: 2444394727615002143}
   - component: {fileID: 3764303524224302276}
+  - component: {fileID: 2081621755512436195}
   m_Layer: 5
   m_Name: CostPanelButton
   m_TagString: Untagged
@@ -787,6 +802,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &2081621755512436195
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444394727615002137}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2444394727630303641
 GameObject:
   m_ObjectHideFlags: 0
