@@ -114,12 +114,49 @@ public class TrainingManager : MonoBehaviour
                 case 6:
                     managerBuyButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
                     managerBuyButtonCanvasGroup.ignoreParentGroups = false;
+                    traderCanvasGroup.ignoreParentGroups = false;
+                    traderDialogBox.SetActive(false);
                     trainingPanelsGO.SetActive(true);
                     managerTrainingPanelCanvasGroup.gameObject.SetActive(true);
-                    managerTrainingPanelCanvasGroup.gameObject.GetComponent<Button>().onClick.AddListener(() => NextStep());
+                    managerTrainingPanelCanvasGroup.ignoreParentGroups = true;
+                    managerTrainingPanelCanvasGroup.gameObject.GetComponent<Button>().onClick.AddListener(() => TrainingBreak());
                     // Заработайте 10000
                     break;
                 case 7:
+                    if(openImprovementsButtonCanvasGroup.gameObject.GetComponent<Button>().interactable)
+                    {
+                        openImprovementsButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.AddListener(() => NextStep());
+                        traderDialogText.text = dialog.trainigTextBase[5];
+                        managerTrainingPanelCanvasGroup.ignoreParentGroups = false;
+                        openImprovementsButtonCanvasGroup.ignoreParentGroups = true;
+                        // Откройте улучшения
+                    }
+                    else
+                    {
+                        NextStep();
+                    }
+                    break;
+                case 8:
+                    openImprovementsButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
+                    traderDialogText.text = dialog.trainigTextBase[6];
+                    openImprovementsButtonCanvasGroup.ignoreParentGroups = false;
+                    improvementBuyButtonCanvasGroup.ignoreParentGroups = true;
+                    improvementBuyButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.AddListener(() => NextStep());
+                    // Купите Улучшение
+                    break;
+                case 9:
+                    improvementBuyButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
+                    improvementBuyButtonCanvasGroup.ignoreParentGroups = false;
+                    traderCanvasGroup.ignoreParentGroups = false;
+                    traderDialogBox.SetActive(false);
+                    trainingPanelsGO.SetActive(true);
+                    improvementTrainingPanelCanvasGroup.gameObject.SetActive(true);
+                    improvementTrainingPanelCanvasGroup.ignoreParentGroups = true;
+                    improvementTrainingPanelCanvasGroup.gameObject.GetComponent<Button>().onClick.AddListener(() => TrainingBreak());
+                    // Заработайте миллиард
+                    break;
+                case 10:
+                    trainingStatus = 0;
                     TrainingBreak();
                     break;
             }

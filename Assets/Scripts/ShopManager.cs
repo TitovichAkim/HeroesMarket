@@ -270,6 +270,12 @@ public class ShopManager:MonoBehaviour
                         trainingManager.NextStep();
                     }
                     break;
+                case 6:
+                    if(coins >= 10000)
+                    {
+                        trainingManager.NextStep();
+                    }
+                    break;
             }
         }
     }

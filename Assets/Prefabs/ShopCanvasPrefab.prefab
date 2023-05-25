@@ -66,9 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0422\u0435\u043F\u0435\u0440\u044C \u0442\u043E\u0432\u0430\u0440\u044B
-    \u043F\u0440\u043E\u0434\u0430\u044E\u0442\u0441\u044F \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438!
-    \u0423\u0440\u0430!"
+  m_text: Now the goods are sold automatically! Hurray!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
   m_sharedMaterial: {fileID: 3447155367056874904, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
@@ -646,8 +644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435, \u0447\u0442\u043E\u0431\u044B
-    \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  m_text: Click to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
   m_sharedMaterial: {fileID: 3447155367056874904, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
@@ -782,8 +779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435, \u0447\u0442\u043E\u0431\u044B
-    \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  m_text: Click to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
   m_sharedMaterial: {fileID: 3447155367056874904, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
@@ -918,7 +914,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u043E\u0432\u0430\u044F \u0446\u0435\u043B\u044C: 10000!"
+  m_text: 'New goal: 10000!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
   m_sharedMaterial: {fileID: 3447155367056874904, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
@@ -1053,8 +1049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u0438\u0431\u044B\u043B\u044C \u0441 \u0442\u043E\u0432\u0430\u0440\u0430
-    \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0430 \u0432 2 \u0440\u0430\u0437\u0430!"
+  m_text: The profit from the product has been increased by 2 times!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
   m_sharedMaterial: {fileID: 3447155367056874904, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
@@ -1967,7 +1962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2346715037072467322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2051,6 +2046,7 @@ GameObject:
   - component: {fileID: 4650275127117416050}
   - component: {fileID: 1636252228843298213}
   - component: {fileID: 6767480550953152904}
+  - component: {fileID: 7700698237277002084}
   m_Layer: 5
   m_Name: TrainingPanels
   m_TagString: Untagged
@@ -2138,6 +2134,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!225 &7700698237277002084
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003907074605019011}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3016156612490248688
 GameObject:
   m_ObjectHideFlags: 0
@@ -8228,10 +8236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0430\u0439\u0442\u0435 \u0440\u0430\u0437\u0432\u0438\u0432\u0430\u0442\u044C\u0441\u044F.
-    \n\u0417\u0430\u0440\u0430\u0431\u043E\u0442\u0430\u0439\u0442\u0435 5 \u043C\u043B\u0440\u0434.\n\u0438
-    \u043E\u0442\u043A\u0440\u043E\u0439\u0442\u0435 \u043D\u043E\u0432\u0443\u044E
-    \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E \u0442\u043E\u0432\u0430\u0440\u043E\u0432."
+  m_text: Here you can forge and sell armor!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
   m_sharedMaterial: {fileID: 3447155367056874904, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
@@ -8258,7 +8263,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.25
+  m_fontSize: 23.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8390,6 +8395,7 @@ GameObject:
   - component: {fileID: 2286491232275019499}
   - component: {fileID: 6614682389422667801}
   - component: {fileID: 2416043404209206919}
+  - component: {fileID: 1373693897159845933}
   m_Layer: 5
   m_Name: ImprovementTraining
   m_TagString: Untagged
@@ -8526,6 +8532,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &1373693897159845933
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851504077661340550}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6893829395280626362
 GameObject:
   m_ObjectHideFlags: 0
@@ -8692,6 +8710,7 @@ GameObject:
   - component: {fileID: 152600050481988774}
   - component: {fileID: 2733387874021750247}
   - component: {fileID: 5410953205524462745}
+  - component: {fileID: 3277575417327129023}
   m_Layer: 5
   m_Name: ManagerTraining
   m_TagString: Untagged
@@ -8828,6 +8847,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &3277575417327129023
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213419967928986336}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7377676407757672672
 GameObject:
   m_ObjectHideFlags: 0
