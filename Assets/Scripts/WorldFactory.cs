@@ -76,11 +76,20 @@ public class WorldFactory:MonoBehaviour
 
         _ShopManager.StartShop();
 
-        if(trainingManager.trainingStatus == 1)
+        if(PlayerPrefs.HasKey("TrainingStatus"))
         {
-            Debug.Log("Тренировка равна 1");
+            trainingManager.trainingStatus = PlayerPrefs.GetInt("TrainingStatus");
+            if(trainingManager.trainingStatus == 1)
+            {
+                trainingManager.ShowTraining();
+            }
+        }
+        else
+        {
+            trainingManager.trainingStatus = 1;
             trainingManager.ShowTraining();
         }
+
     }
     public async Task InitializeArrays ()
     {

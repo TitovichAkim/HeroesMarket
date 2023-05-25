@@ -43,18 +43,8 @@ public class TrainingManager : MonoBehaviour
         }
     }
 
-    private void Start ()
-    {
-        if (PlayerPrefs.HasKey("TrainingStatus"))
-        {
-            Debug.Log("Существует ключ TrainingStatus");
-            trainingStatus = PlayerPrefs.GetInt("TrainingStatus");
-        }
-    }
-
     public void ShowTraining ()
     {
-        Debug.Log("Началась тренировка");
         if(trainingStatus != 0)
         {
             Training = true;
