@@ -1650,6 +1650,7 @@ GameObject:
   - component: {fileID: 7772913656746933683}
   - component: {fileID: 934514726964267532}
   - component: {fileID: 6459219802444989708}
+  - component: {fileID: 6823502016829455496}
   m_Layer: 5
   m_Name: ClosedCardBody
   m_TagString: Untagged
@@ -1736,6 +1737,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!225 &6823502016829455496
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5822689000981878993}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
 --- !u!1 &7933637866665082628
 GameObject:
   m_ObjectHideFlags: 0
