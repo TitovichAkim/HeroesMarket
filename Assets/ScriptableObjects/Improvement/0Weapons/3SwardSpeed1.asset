@@ -15,7 +15,8 @@ MonoBehaviour:
   improvementsIcon: {fileID: 21300000, guid: 71cc5e30d64120d44805d517c8375c2c, type: 3}
   cardBackImage: {fileID: 21300000, guid: ba58ffb78df887f49950f04702faf794, type: 3}
   improvementsName: SwardSpeed1
-  improvementsCost: 500000
+  improvementsPublicName: 
+  improvementsCost: 2500000
   improvementsValue: 2
   improvementsType: 1
   improvementsTargetIndex: 1

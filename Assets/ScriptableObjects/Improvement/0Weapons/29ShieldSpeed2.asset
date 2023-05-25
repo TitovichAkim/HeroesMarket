@@ -15,7 +15,8 @@ MonoBehaviour:
   improvementsIcon: {fileID: 21300000, guid: 36b51f6200bebbb4ba1e1f65550fcf31, type: 3}
   cardBackImage: {fileID: 21300000, guid: 8075ecd89bf656046ab5965cca97498a, type: 3}
   improvementsName: ShieldSpeed2
-  improvementsCost: 80000000
+  improvementsPublicName: 
+  improvementsCost: 62000000
   improvementsValue: 2
   improvementsType: 1
   improvementsTargetIndex: 8

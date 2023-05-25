@@ -17,5 +17,5 @@ MonoBehaviour:
   productName: Shield2
   initialCost: 70000
   costMultiplier: 1.09
-  initialTime: 6
-  initialRevenue: 55000
+  initialTime: 10
+  initialRevenue: 95000

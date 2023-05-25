@@ -17,5 +17,5 @@ MonoBehaviour:
   productName: Axe0
   initialCost: 40
   costMultiplier: 1.07
-  initialTime: 0.5
-  initialRevenue: 10
+  initialTime: 0.7
+  initialRevenue: 14
