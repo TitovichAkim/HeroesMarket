@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.UI;
+using Unity.VisualScripting;
+using TMPro;
 
 public class WorldFactory:MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class WorldFactory:MonoBehaviour
 
     public Sprite[] improvementTypeImagesArray;
 
+    public TrainingManager trainingManager;
     public RoomSetSO[] roomSetSOArray;
     public ProductsSO[] productsSOArray;
     public ManagersSO[] managersSOArray;
@@ -37,6 +40,21 @@ public class WorldFactory:MonoBehaviour
         _roomsPanelManager[1] = _ShopManager.managersPanel.GetComponent<RoomsPanelManager>();
         _roomsPanelManager[2] = _ShopManager.improvementsPanel.GetComponent<RoomsPanelManager>();
         _roomsPanelManager[3] = _ShopManager.factoryesPanel.GetComponent<RoomsPanelManager>();
+
+        _ShopManager.trainingManager = trainingManager;
+        trainingManager.trainingPanelsGO = _ShopManager.trainingPanelsGO;
+        trainingManager.openProductsButtonCanvasGroup = _ShopManager.openProductsButtonGO.GetComponent<CanvasGroup>();
+        trainingManager.openManagersButtonCanvasGroup = _ShopManager.openManagersButtonGO.GetComponent<CanvasGroup>();
+        trainingManager.managerTrainingPanelCanvasGroup = _ShopManager.managerTrainingPanel.GetComponent<CanvasGroup>();
+        trainingManager.openImprovementsButtonCanvasGroup = _ShopManager.openImprovementsButtonGO.GetComponent<CanvasGroup>();
+        trainingManager.improvementTrainingPanelCanvasGroup = _ShopManager.improvementTrainingPanel.GetComponent<CanvasGroup>();
+
+        trainingManager.traderDialogBox = _ShopManager.traderDialogBoxGO;
+        trainingManager.traderDialogText = _ShopManager.traderDialogText.GetComponent<TextMeshProUGUI>();
+        trainingManager.traderDialogBox.SetActive(false);
+        trainingManager.shopCanvasGroup = shop.GetComponent<CanvasGroup>();
+        trainingManager.traderCanvasGroup = _ShopManager.traderGO.GetComponent<CanvasGroup>();
+        trainingManager.traderDialogBoxCanvasGroup = _ShopManager.traderDialogBoxGO.GetComponent<CanvasGroup>();
     }
     public void Start ()
     {
@@ -57,6 +75,12 @@ public class WorldFactory:MonoBehaviour
         await CollectMenu();            // Собрать меню
 
         _ShopManager.StartShop();
+
+        if(trainingManager.trainingStatus == 1)
+        {
+            Debug.Log("Тренировка равна 1");
+            trainingManager.ShowTraining();
+        }
     }
     public async Task InitializeArrays ()
     {
@@ -114,6 +138,12 @@ public class WorldFactory:MonoBehaviour
                             product.shopManager = _ShopManager;
                             _ShopManager.productPanelsArray[i][j] = product;
                             product.productSO = roomSetSOArray[i].products[j];
+
+                            if (i == 0 && j == 0)
+                            {
+                                trainingManager.productBuyButtonCanvasGroup = product.buyButtonGO.GetComponent<CanvasGroup>();
+                                trainingManager.productPanelCanvasGroup = productPanel.GetComponent<CanvasGroup>();
+                            }
                             break;
                         case 1:
                             GameObject managerPanel = Instantiate(managersPanelPrefab, roomTransform);
@@ -122,6 +152,11 @@ public class WorldFactory:MonoBehaviour
                             _ShopManager.managerPanelsArray[i][j] = manager;
                             manager.managerSO = roomSetSOArray[i].managers[j];
                             manager.backgroundImage.sprite = manager.managerSO.managersBackIcon;
+
+                            if(i == 0 && j == 0)
+                            {
+                                trainingManager.managerBuyButtonCanvasGroup = manager.buyButtonGO.GetComponent<CanvasGroup>();
+                            }
                             break;
                         case 2:
                             GameObject improvementPanel = Instantiate(improvementsPanelPrefab, roomTransform);
@@ -131,6 +166,11 @@ public class WorldFactory:MonoBehaviour
                             improvement.improvementSO = roomSetSOArray[i].improvements[j];
                             improvement.improvementTypeImage.sprite = improvementTypeImagesArray[improvement.improvementSO.improvementsType];
                             improvement.improvementBackgroundImage.sprite = improvement.improvementSO.cardBackImage;
+
+                            if(i == 0 && j == 0)
+                            {
+                                trainingManager.improvementBuyButtonCanvasGroup = improvement.buyButtonGO.GetComponent<CanvasGroup>();
+                            }
                             break;
                         case 3:
 

@@ -16,6 +16,7 @@ public class ImprovementPanelManager: MonoBehaviour
     public TextMeshProUGUI improvementCostText;
     public Button buyButton;
     public GameObject closedCardBody;
+    public GameObject buyButtonGO;
 
     public ImprovementSO _improvementSO;
 

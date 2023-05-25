@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 2444394727098198605}
   - component: {fileID: 2444394727098198606}
   - component: {fileID: 1831384288215091850}
+  - component: {fileID: -788702749678216220}
   m_Layer: 5
   m_Name: ManagerPanelPrefab
   m_TagString: Untagged
@@ -340,9 +341,21 @@ MonoBehaviour:
   managerActionText: {fileID: 907979330870947203}
   managerCostText: {fileID: 7294980380229894934}
   buyButton: {fileID: 3764303524224302276}
-  buyButtonGO: {fileID: 0}
+  buyButtonGO: {fileID: 2444394727615002137}
   closedCardBody: {fileID: 7382089093350074288}
   _managerSO: {fileID: 0}
+--- !u!225 &-788702749678216220
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444394727098198600}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2444394727502657550
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +444,7 @@ GameObject:
   - component: {fileID: 2444394727615002142}
   - component: {fileID: 2444394727615002143}
   - component: {fileID: 3764303524224302276}
+  - component: {fileID: 2233445684072842667}
   m_Layer: 5
   m_Name: CostPanelButton
   m_TagString: Untagged
@@ -554,6 +568,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &2233445684072842667
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444394727615002137}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2444394727630303641
 GameObject:
   m_ObjectHideFlags: 0
