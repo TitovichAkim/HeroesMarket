@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
     public float exitTime;
     public float timeSinceExit;
     public TimeSpan currentTime;
-    private float _reward = 0;
+    private double _reward = 0;
 
     public void Start ()
     {
