@@ -58,20 +58,20 @@ public class ManagerPanelManager:MonoBehaviour
         managerNameText.text = managerSO.managersPublicName;
         managerClassText.text = managerSO.managersClass;
 
-        NumberFormatter.FormatAndRedraw(managerSO.managersCost, managerCostText);
+        NumberFormatter.FormatAndRedraw(NumberFormatter.StringToDecimal(managerSO.managersCost), managerCostText);
     }
     public void RedrawThePanel ()
     {
-        buyButton.interactable = shopManager.coins >= managerSO.managersCost;
+        buyButton.interactable = shopManager.coins >= NumberFormatter.StringToDecimal(managerSO.managersCost);
     }
 
     public void BuyManager ()
     {
         if(!managerState)
         {
-            if(shopManager.coins >= managerSO.managersCost)
+            if(shopManager.coins >= NumberFormatter.StringToDecimal(managerSO.managersCost))
             {
-                shopManager.coins -= managerSO.managersCost;
+                shopManager.coins -= NumberFormatter.StringToDecimal(managerSO.managersCost);
                 managerState = true;
                 shopManager.SaveManagersStates();
             }

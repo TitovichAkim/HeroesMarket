@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 36b51f6200bebbb4ba1e1f65550fcf31, type: 3}
   cardsBackground: {fileID: 21300000, guid: 36b51f6200bebbb4ba1e1f65550fcf31, type: 3}
   productName: Shield2
-  initialCost: 70000
+  initialCost: 
   costMultiplier: 1.09
-  initialTime: 6
+  initialTime: 
   initialRevenue: 55000

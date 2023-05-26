@@ -7,8 +7,8 @@ public class ProductsSO : ScriptableObject
     public Sprite cardsBackground;
 
     public string productName;
-    public float initialCost;
+    public string initialCost;
     public float costMultiplier;
-    public float initialTime;
+    public string initialTime;
     public int initialRevenue;
 }
