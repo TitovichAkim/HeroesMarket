@@ -11,5 +11,5 @@ public class ManagersSO : ScriptableObject
     public string managersName;
     public string managersPublicName;
     public string managersClass;
-    public string managersCost;
+    public float managersCost;
 }

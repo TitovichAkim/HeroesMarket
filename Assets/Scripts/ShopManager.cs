@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class ShopManager:MonoBehaviour
 {
@@ -38,9 +37,9 @@ public class ShopManager:MonoBehaviour
     private int[] _upgradeNumbers = {1, 10, 25, 100};
     private int _upgradeIndex = 0;
 
-    private Decimal _coins;
+    private float _coins;
 
-    public Decimal coins
+    public float coins
     {
         get
         {
@@ -50,7 +49,7 @@ public class ShopManager:MonoBehaviour
         {
             _coins = value;
             NumberFormatter.FormatAndRedraw(_coins, numbersOfCoinsFloatText);
-            PlayerPrefs.SetString("Coin", _coins.ToString());
+            PlayerPrefs.SetFloat("Coin", _coins);
             _RedrawUpgradeButtons();
             CheckTheTraining();
         }
@@ -82,7 +81,7 @@ public class ShopManager:MonoBehaviour
 
     public void StartShop ()
     {
-        coins = decimal.Parse(PlayerPrefs.GetString("Coin"));
+        coins = PlayerPrefs.GetFloat("Coin");
         if(coins == 0)
         {
             coins = 5;
@@ -161,7 +160,7 @@ public class ShopManager:MonoBehaviour
     }
     public void ApplyImprovementState (int type, int target, int indexI, int indexJ)
     {
-        decimal improvementsValue = NumberFormatter.StringToDecimal(improvementPanelArray[indexI][indexJ].improvementSO.improvementsValue);
+        float improvementsValue = improvementPanelArray[indexI][indexJ].improvementSO.improvementsValue;
         switch(type)
         {
             case 0:

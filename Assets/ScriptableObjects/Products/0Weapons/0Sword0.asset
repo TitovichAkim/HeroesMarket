@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f4f7e5451f0f4044296f4ba288d1bdb3, type: 3}
   cardsBackground: {fileID: 21300000, guid: f4f7e5451f0f4044296f4ba288d1bdb3, type: 3}
   productName: Sword0
-  initialCost: 
+  initialCost: 4
   costMultiplier: 1.07
-  initialTime: 
+  initialTime: 0.5
   initialRevenue: 1

@@ -56,22 +56,22 @@ public class ImprovementPanelManager: MonoBehaviour
         //{
         //    Localizator.LocalizedText(descriptionTexts[i], $"ImprovementDescription.{improvementSO.improvementsName}", i);
         //}
-        NumberFormatter.FormatAndRedraw(NumberFormatter.StringToDecimal(improvementSO.improvementsCost), improvementCostText);
+        NumberFormatter.FormatAndRedraw(improvementSO.improvementsCost, improvementCostText);
 
     }
 
     public void RedrawThePanel ()
     {
-        buyButton.interactable = shopManager.coins >= NumberFormatter.StringToDecimal(improvementSO.improvementsCost);
+        buyButton.interactable = shopManager.coins >= improvementSO.improvementsCost;
     }
 
     public void BuyImprovement ()
     {
         if(!improvementState)
         {
-            if(shopManager.coins >= NumberFormatter.StringToDecimal(improvementSO.improvementsCost))
+            if(shopManager.coins >= improvementSO.improvementsCost)
             {
-                shopManager.coins -= NumberFormatter.StringToDecimal(improvementSO.improvementsCost);
+                shopManager.coins -= improvementSO.improvementsCost;
                 improvementState = true;
                 shopManager.SaveImprovementsStates();
                 _UpdateImprovementStateArray(this);

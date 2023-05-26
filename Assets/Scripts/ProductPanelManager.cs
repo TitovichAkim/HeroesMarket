@@ -30,10 +30,10 @@ public class ProductPanelManager : MonoBehaviour
     private int _productInvestments;
     private int _upgradesNumber = 1;
 
-    private decimal _productRevenue;
-    private decimal _upgradeCost;
-    private decimal _multiplierProductRevenue;
-    private decimal _multiplierInitialTime;
+    private float _productRevenue;
+    private float _upgradeCost;
+    private float _multiplierProductRevenue = 1;
+    private float _multiplierInitialTime = 1;
 
     private float _timerStart;
     private bool _manager;
@@ -78,7 +78,7 @@ public class ProductPanelManager : MonoBehaviour
             RedrawThePanel();
         }
     }
-    public decimal productRevenue
+    public float productRevenue
     {
         get
         {
@@ -89,7 +89,7 @@ public class ProductPanelManager : MonoBehaviour
             _productRevenue = value;
         }
     }
-    public decimal multiplierProductRevenue
+    public float multiplierProductRevenue
     {
         get
         {
@@ -101,7 +101,7 @@ public class ProductPanelManager : MonoBehaviour
             RedrawThePanel();
         }
     }
-    public decimal multiplierInitialTime
+    public float multiplierInitialTime
     {
         get
         {
@@ -165,8 +165,8 @@ public class ProductPanelManager : MonoBehaviour
     {
         if (_timer)
         {
-            decimal timer = NumberFormatter.StringToDecimal(productSO.initialTime) / multiplierInitialTime - Mathf.FloorToInt((Time.time - _timerStart) % 60);
-            progressBar.fillAmount = (Time.time - _timerStart) / (float)(NumberFormatter.StringToDecimal(productSO.initialTime) / multiplierInitialTime);
+            float timer = productSO.initialTime / multiplierInitialTime - Mathf.FloorToInt((Time.time - _timerStart) % 60);
+            progressBar.fillAmount = (Time.time - _timerStart) / (productSO.initialTime / multiplierInitialTime);
             timerText.text = $"{timer}";
         }
     }
@@ -188,8 +188,7 @@ public class ProductPanelManager : MonoBehaviour
                 _timer = true;
                 productBackground.enabled = false;
                 sellProductButton.interactable = false;
-                productIcon.color = new Color(1, 1, 1, 0.7f);
-                yield return new WaitForSeconds((float)(NumberFormatter.StringToDecimal(productSO.initialTime) / multiplierInitialTime));
+                yield return new WaitForSeconds(productSO.initialTime / multiplierInitialTime);
                 _SellProduct();
                 _sellProcess = false;
             } while(manager);
@@ -202,8 +201,7 @@ public class ProductPanelManager : MonoBehaviour
         _timer = false;
         productBackground.enabled = true;
         sellProductButton.interactable = true;
-        productIcon.color = Color.white;
-        timerText.text = $"{NumberFormatter.StringToDecimal(productSO.initialTime) / multiplierInitialTime}";
+        timerText.text = $"{productSO.initialTime / multiplierInitialTime}";
     }
 
     public void ProductLevelUp ()
@@ -231,16 +229,16 @@ public class ProductPanelManager : MonoBehaviour
     private void RedrawThePanel ()
     {
         productLevelText.text = $"Lvl. {productInvestments}";
-        timerText.text = $"{NumberFormatter.StringToDecimal(productSO.initialTime) / multiplierInitialTime}";
+        timerText.text = $"{productSO.initialTime / multiplierInitialTime}";
 
-        productRevenue = (decimal)(_productInvestments * productSO.initialRevenue * multiplierProductRevenue);
+        productRevenue = _productInvestments * productSO.initialRevenue * multiplierProductRevenue;
 
 
-        decimal totalCost = 0;
+        float totalCost = 0;
 
         for (int i = 0; i < _upgradesNumber; i++)
         {
-            totalCost += NumberFormatter.StringToDecimal(productSO.initialCost) * (decimal)Mathf.Pow(productSO.costMultiplier, productInvestments + i);
+            totalCost += productSO.initialCost * Mathf.Pow(productSO.costMultiplier, productInvestments + i);
         }
         _upgradeCost = totalCost;
         NumberFormatter.FormatAndRedraw(_upgradeCost, costFloatText, costStringText);

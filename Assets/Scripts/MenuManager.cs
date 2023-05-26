@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
     public float exitTime;
     public float timeSinceExit;
     public TimeSpan currentTime;
-    private decimal _reward = 0;
+    private float _reward = 0;
 
     public void Start ()
     {
@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour
             {
                 if(productPanelManager.manager)
                 {
-                    decimal rewardMultiplier = (decimal)timeSinceExit/NumberFormatter.StringToDecimal(productPanelManager.productSO.initialTime) * productPanelManager.multiplierInitialTime;
+                    float rewardMultiplier = timeSinceExit/productPanelManager.productSO.initialTime * productPanelManager.multiplierInitialTime;
                     _reward += productPanelManager.productRevenue * rewardMultiplier;
                     ReturnPanel.SetActive(true);
                 }
