@@ -74,7 +74,9 @@ public class WorldFactory:MonoBehaviour
 
         await CollectMenu();            // Собрать меню
 
-        _ShopManager.StartShop();
+        await _ShopManager.StartShop();
+
+        _ShopManager.RedrawIconsOnTheShelf();
 
         _StartTraining();
     }

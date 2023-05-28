@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading.Tasks;
+
 
 public class ShopManager:MonoBehaviour
 {
@@ -86,7 +88,7 @@ public class ShopManager:MonoBehaviour
         productsOnTheShelf[0] = iconsOnTheShelfBase.weaponIcons;
         productsOnTheShelf[1] = iconsOnTheShelfBase.armorIcons;
     }
-    public void StartShop ()
+    public async Task StartShop ()
     {
         if(PlayerPrefs.HasKey("Coin"))
         {
