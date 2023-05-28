@@ -37,9 +37,9 @@ public class ShopManager:MonoBehaviour
     private int[] _upgradeNumbers = {1, 10, 25, 100};
     private int _upgradeIndex = 0;
 
-    private float _coins;
+    private double _coins;
 
-    public float coins
+    public double coins
     {
         get
         {
@@ -49,7 +49,7 @@ public class ShopManager:MonoBehaviour
         {
             _coins = value;
             NumberFormatter.FormatAndRedraw(_coins, numbersOfCoinsFloatText);
-            PlayerPrefs.SetFloat("Coin", _coins);
+            PlayerPrefs.SetString("Coin", _coins.ToString());
             _RedrawUpgradeButtons();
             CheckTheTraining();
         }
@@ -81,7 +81,7 @@ public class ShopManager:MonoBehaviour
 
     public void StartShop ()
     {
-        coins = PlayerPrefs.GetFloat("Coin");
+        coins = double.Parse(PlayerPrefs.GetString("Coin"));
         if(coins == 0)
         {
             coins = 5;
