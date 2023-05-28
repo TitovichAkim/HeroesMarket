@@ -1557,7 +1557,7 @@ GameObject:
   - component: {fileID: 5511338181381701232}
   - component: {fileID: 6538672903803201160}
   - component: {fileID: 8709842834353953980}
-  - component: {fileID: 7368366615133171761}
+  - component: {fileID: 53875191610928082}
   m_Layer: 5
   m_Name: ClosedCardIcon
   m_TagString: Untagged
@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!225 &7368366615133171761
+--- !u!225 &53875191610928082
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

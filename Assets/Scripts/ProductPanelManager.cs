@@ -30,7 +30,7 @@ public class ProductPanelManager : MonoBehaviour
     private int _productInvestments;
     private int _upgradesNumber = 1;
 
-    private float _productRevenue;
+    private double _productRevenue;
     private float _upgradeCost;
     private float _multiplierProductRevenue = 1;
     private float _multiplierInitialTime = 1;
@@ -78,7 +78,7 @@ public class ProductPanelManager : MonoBehaviour
             RedrawThePanel();
         }
     }
-    public float productRevenue
+    public double productRevenue
     {
         get
         {
@@ -158,7 +158,7 @@ public class ProductPanelManager : MonoBehaviour
         }
 
         RedrawUpgradeButton();
-        shopManager.RedrawIconsOnTheShelf();
+        //shopManager.RedrawIconsOnTheShelf();
     }
  
     private void Update ()
@@ -188,6 +188,7 @@ public class ProductPanelManager : MonoBehaviour
                 _timer = true;
                 productBackground.enabled = false;
                 sellProductButton.interactable = false;
+                productIcon.color = new Color(1, 1, 1, 0.7f);
                 yield return new WaitForSeconds(productSO.initialTime / multiplierInitialTime);
                 _SellProduct();
                 _sellProcess = false;
@@ -201,6 +202,7 @@ public class ProductPanelManager : MonoBehaviour
         _timer = false;
         productBackground.enabled = true;
         sellProductButton.interactable = true;
+        productIcon.color = new Color(1, 1, 1, 1);
         timerText.text = $"{productSO.initialTime / multiplierInitialTime}";
     }
 

@@ -76,20 +76,7 @@ public class WorldFactory:MonoBehaviour
 
         _ShopManager.StartShop();
 
-        if(PlayerPrefs.HasKey("TrainingStatus"))
-        {
-            trainingManager.trainingStatus = PlayerPrefs.GetInt("TrainingStatus");
-            if(trainingManager.trainingStatus == 1)
-            {
-                trainingManager.ShowTraining();
-            }
-        }
-        else
-        {
-            trainingManager.trainingStatus = 1;
-            trainingManager.ShowTraining();
-        }
-
+        _StartTraining();
     }
     public async Task InitializeArrays ()
     {
@@ -191,8 +178,6 @@ public class WorldFactory:MonoBehaviour
         }
     }
 
-
-
     //public async Task CollectManagers ()
     //{
     //    for(int i = 0; i < managersSOArray.Length; i++)
@@ -246,5 +231,18 @@ public class WorldFactory:MonoBehaviour
     {
         GameObject menu = Instantiate(menuPrefab);
         menu.GetComponent<MenuManager>().shopManager = _ShopManager;
+    }
+    private void _StartTraining ()
+    {
+        if(PlayerPrefs.HasKey("TrainingStatus"))
+        {
+            Debug.Log("Существует ключ TrainingStatus");
+            trainingManager.trainingStatus = PlayerPrefs.GetInt("TrainingStatus");
+        }
+        if(trainingManager.trainingStatus == 1)
+        {
+            Debug.Log("Тренировка равна 1");
+            trainingManager.ShowTraining();
+        }
     }
 }

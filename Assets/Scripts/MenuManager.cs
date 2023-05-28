@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
     public float exitTime;
     public float timeSinceExit;
     public TimeSpan currentTime;
-    private float _reward = 0;
+    private double _reward = 0;
 
     public void Start ()
     {
@@ -56,6 +56,7 @@ public class MenuManager : MonoBehaviour
     {
         shopManager.coins += _reward;
         ReturnPanel.SetActive(false);
+        Debug.Log($"Добавлено {_reward}");
     }
 
     public IEnumerator SaveTheMoment ()
@@ -64,6 +65,7 @@ public class MenuManager : MonoBehaviour
         {
             PlayerPrefs.SetString("lastSessionEndTime",  DateTime.Now.ToString());
             PlayerPrefs.Save();
+            Debug.Log("Сохранено");
             yield return new WaitForSeconds(5);
         }
     } 

@@ -10,5 +10,5 @@ public class ProductsSO : ScriptableObject
     public float initialCost;
     public float costMultiplier;
     public float initialTime;
-    public int initialRevenue;
+    public double initialRevenue;
 }
