@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 0833663389834e54ab9981cbb88fa656, type: 3}
   cardsBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   productName: Helmet0
-  initialCost: 120
+  initialCost: 800000000
   costMultiplier: 1.07
-  initialTime: 0.5
-  initialRevenue: 30
+  initialTime: 0.7
+  initialRevenue: 280000000

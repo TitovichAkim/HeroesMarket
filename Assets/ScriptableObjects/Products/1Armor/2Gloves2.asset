@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3eb2d7a8a261d9a4ea4adf214bba8ad4, type: 3}
   cardsBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   productName: Gloves2
-  initialCost: 2100
+  initialCost: 1.4e+10
   costMultiplier: 1.09
   initialTime: 6
-  initialRevenue: 1650
+  initialRevenue: 11000000000

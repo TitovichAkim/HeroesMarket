@@ -15,7 +15,8 @@ MonoBehaviour:
   improvementsIcon: {fileID: 21300000, guid: 79ad461d9ba9f4646affdd0df9f19d69, type: 3}
   cardBackImage: {fileID: 21300000, guid: ba58ffb78df887f49950f04702faf794, type: 3}
   improvementsName: HelmetSpeed1
-  improvementsCost: 15000000
+  improvementsPublicName: 
+  improvementsCost: 1e+14
   improvementsValue: 2
   improvementsType: 1
   improvementsTargetIndex: 4

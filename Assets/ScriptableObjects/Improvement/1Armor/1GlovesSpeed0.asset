@@ -15,7 +15,8 @@ MonoBehaviour:
   improvementsIcon: {fileID: 21300000, guid: 239bc9d92ad343a4e8572efd4e8bdd5d, type: 3}
   cardBackImage: {fileID: 21300000, guid: ab88495411177504494e996d203e9099, type: 3}
   improvementsName: GlovesSpeed0
-  improvementsCost: 900000
+  improvementsPublicName: 
+  improvementsCost: 2.5e+12
   improvementsValue: 2
   improvementsType: 1
   improvementsTargetIndex: 0
