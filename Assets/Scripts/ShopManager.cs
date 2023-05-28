@@ -19,6 +19,7 @@ public class ShopManager:MonoBehaviour
     public GameObject trainingPanelsGO;
     public GameObject managerTrainingPanel;
     public GameObject improvementTrainingPanel;
+    public GameObject[][] productsOnTheShelf = new GameObject[2][];
 
 
     public TextMeshProUGUI numbersOfCoinsFloatText;
@@ -27,6 +28,7 @@ public class ShopManager:MonoBehaviour
 
 
     public TrainingManager trainingManager;
+    public IconsOnTheShelfBase iconsOnTheShelfBase;
     public ProductPanelManager[][] productPanelsArray;
     public ManagerPanelManager[][] managerPanelsArray;
     public ImprovementPanelManager[][] improvementPanelArray;
@@ -79,9 +81,18 @@ public class ShopManager:MonoBehaviour
         }
     }
 
+    public void Awake ()
+    {
+        productsOnTheShelf[0] = iconsOnTheShelfBase.weaponIcons;
+        productsOnTheShelf[1] = iconsOnTheShelfBase.armorIcons;
+    }
     public void StartShop ()
     {
+        if(PlayerPrefs.HasKey("Coin"))
+        {
         coins = double.Parse(PlayerPrefs.GetString("Coin"));
+        }
+
         if(coins == 0)
         {
             coins = 5;
@@ -146,17 +157,27 @@ public class ShopManager:MonoBehaviour
 
     public void RedrawIconsOnTheShelf ()
     {
-        //for(int i = 0; i < ProductIconsOnTheShelf.Length; i++)
-        //{
-        //    if(productPanelsArray[i] != null)
-        //    {
-        //        ProductIconsOnTheShelf[i].enabled = productPanelsArray[i].productInvestments > 0;
-        //    }
-        //    else
-        //    {
-        //        break;
-        //    }
-        //}
+        for(int i = 0; i < productsOnTheShelf.Length; i++)
+        {
+            if(productsOnTheShelf[i] != null)
+            {
+                for(int j = 0; j < productsOnTheShelf[i].Length; j++)
+                {
+                    if(productsOnTheShelf[i][j] != null)
+                    {
+                        productsOnTheShelf[i][j].SetActive(productPanelsArray[i][j].productInvestments > 0);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
     }
     public void ApplyImprovementState (int type, int target, int indexI, int indexJ)
     {

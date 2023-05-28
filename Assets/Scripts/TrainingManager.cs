@@ -43,15 +43,6 @@ public class TrainingManager : MonoBehaviour
         }
     }
 
-    private void Start ()
-    {
-        if (PlayerPrefs.HasKey("TrainingStatus"))
-        {
-            Debug.Log("Существует ключ TrainingStatus");
-            trainingStatus = PlayerPrefs.GetInt("TrainingStatus");
-        }
-    }
-
     public void ShowTraining ()
     {
         Debug.Log("Началась тренировка");
@@ -86,7 +77,7 @@ public class TrainingManager : MonoBehaviour
                     productPanelCanvasGroup.GetComponent<Button>().onClick.RemoveAllListeners();
                     traderDialogText.text = dialog.trainigTextBase[2];
                     productPanelCanvasGroup.ignoreParentGroups = true;
-                    TrainingBreak();
+                    productPanelCanvasGroup.GetComponent<Button>().onClick.AddListener(() => TrainingBreak());
                     // Заработайте 1000
                     break;
                 case 4:
@@ -114,8 +105,7 @@ public class TrainingManager : MonoBehaviour
                 case 6:
                     managerBuyButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
                     managerBuyButtonCanvasGroup.ignoreParentGroups = false;
-                    traderCanvasGroup.ignoreParentGroups = false;
-                    traderDialogBox.SetActive(false);
+                    traderDialogText.text = dialog.trainigTextBase[5];
                     trainingPanelsGO.SetActive(true);
                     managerTrainingPanelCanvasGroup.gameObject.SetActive(true);
                     managerTrainingPanelCanvasGroup.ignoreParentGroups = true;
@@ -126,7 +116,7 @@ public class TrainingManager : MonoBehaviour
                     if(openImprovementsButtonCanvasGroup.gameObject.GetComponent<Button>().interactable)
                     {
                         openImprovementsButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.AddListener(() => NextStep());
-                        traderDialogText.text = dialog.trainigTextBase[5];
+                        traderDialogText.text = dialog.trainigTextBase[6];
                         managerTrainingPanelCanvasGroup.ignoreParentGroups = false;
                         openImprovementsButtonCanvasGroup.ignoreParentGroups = true;
                         // Откройте улучшения
@@ -138,7 +128,7 @@ public class TrainingManager : MonoBehaviour
                     break;
                 case 8:
                     openImprovementsButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
-                    traderDialogText.text = dialog.trainigTextBase[6];
+                    traderDialogText.text = dialog.trainigTextBase[7];
                     openImprovementsButtonCanvasGroup.ignoreParentGroups = false;
                     improvementBuyButtonCanvasGroup.ignoreParentGroups = true;
                     improvementBuyButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.AddListener(() => NextStep());
@@ -147,8 +137,8 @@ public class TrainingManager : MonoBehaviour
                 case 9:
                     improvementBuyButtonCanvasGroup.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
                     improvementBuyButtonCanvasGroup.ignoreParentGroups = false;
-                    traderCanvasGroup.ignoreParentGroups = false;
-                    traderDialogBox.SetActive(false);
+                    traderDialogText.text = dialog.trainigTextBase[8];
+
                     trainingPanelsGO.SetActive(true);
                     improvementTrainingPanelCanvasGroup.gameObject.SetActive(true);
                     improvementTrainingPanelCanvasGroup.ignoreParentGroups = true;
@@ -156,7 +146,7 @@ public class TrainingManager : MonoBehaviour
                     // Заработайте миллиард
                     break;
                 case 10:
-                    trainingStatus = 0;
+                    trainingStatus = 0; // Выключить обучение
                     TrainingBreak();
                     break;
             }

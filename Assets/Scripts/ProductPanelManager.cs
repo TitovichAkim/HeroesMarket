@@ -158,7 +158,7 @@ public class ProductPanelManager : MonoBehaviour
         }
 
         RedrawUpgradeButton();
-        shopManager.RedrawIconsOnTheShelf();
+        //shopManager.RedrawIconsOnTheShelf();
     }
  
     private void Update ()
