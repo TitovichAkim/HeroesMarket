@@ -17,5 +17,5 @@ MonoBehaviour:
   productName: Shield1
   initialCost: 5000
   costMultiplier: 1.08
-  initialTime: 3
-  initialRevenue: 6000
+  initialTime: 5
+  initialRevenue: 9300

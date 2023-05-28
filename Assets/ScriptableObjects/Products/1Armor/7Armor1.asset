@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: da9e84bcffabdfa439336d61b064826d, type: 3}
   cardsBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   productName: Armor1
-  initialCost: 15000
+  initialCost: 1e+11
   costMultiplier: 1.08
-  initialTime: 3
-  initialRevenue: 18000
+  initialTime: 5
+  initialRevenue: 186000000000

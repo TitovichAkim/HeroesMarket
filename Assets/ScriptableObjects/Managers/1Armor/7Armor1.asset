@@ -17,4 +17,4 @@ MonoBehaviour:
   managersName: Armor1
   managersPublicName: 'Armor Smith '
   managersClass: Apprentice
-  managersCost: 4500000
+  managersCost: 1.44e+13

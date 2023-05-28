@@ -17,4 +17,4 @@ MonoBehaviour:
   managersName: Gloves1
   managersPublicName: 'Gauntlets Smith '
   managersClass: Apprentice
-  managersCost: 45000
+  managersCost: 1.2e+12
