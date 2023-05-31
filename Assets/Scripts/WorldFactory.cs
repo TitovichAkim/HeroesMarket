@@ -174,7 +174,8 @@ public class WorldFactory:MonoBehaviour
                     }
                 }
             }
-            _roomsPanelManager[s].OpenFirstPnel();
+            _roomsPanelManager[s].SwitchPanel(_roomsPanelManager[s].childPanelsGOArray[0]);
+            
         }
     }
 
@@ -211,7 +212,7 @@ public class WorldFactory:MonoBehaviour
         room.GetComponent<AniManager>().openRoomButton = openRoomButton.GetComponent<Button>();
 
         Button button =  openRoomButton.GetComponent<Button>();
-        button.onClick.AddListener(() => roomsPM.SwitchPanel(room));
+        button.onClick.AddListener(() => roomsPM.moveScrollPanelManager.OpenTargetPanelScroll(room));
         button.image.sprite = set.closedButtonSprite;
 
 
