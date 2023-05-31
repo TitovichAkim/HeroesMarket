@@ -31,6 +31,7 @@ public class ShopManager:MonoBehaviour
 
     public TrainingManager trainingManager;
     public IconsOnTheShelfBase iconsOnTheShelfBase;
+    public MoveScrollPanelManager moveScrollPanelManager;
     public ProductPanelManager[][] productPanelsArray;
     public ManagerPanelManager[][] managerPanelsArray;
     public ImprovementPanelManager[][] improvementPanelArray;

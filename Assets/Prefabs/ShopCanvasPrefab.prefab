@@ -1586,6 +1586,7 @@ MonoBehaviour:
   leftPanelGO: {fileID: 2608817197041471773}
   rightPanelGO: {fileID: 3376289544211263427}
   childPanelsGOArray: []
+  moveScrollPanelManager: {fileID: 7604112308585198411}
   animationActive: 0
 --- !u!114 &8666349865486257406
 MonoBehaviour:
@@ -3654,6 +3655,7 @@ MonoBehaviour:
   - {fileID: 0}
   trainingManager: {fileID: 0}
   iconsOnTheShelfBase: {fileID: 425782963803529847}
+  moveScrollPanelManager: {fileID: 0}
 --- !u!114 &425782963803529847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6139,6 +6141,7 @@ GameObject:
   - component: {fileID: 5285045471328333805}
   - component: {fileID: 5285045471328333806}
   - component: {fileID: 5285045471328333807}
+  - component: {fileID: 7604112308585198411}
   m_Layer: 5
   m_Name: ScrollPanelTabs
   m_TagString: Untagged
@@ -6254,6 +6257,23 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &7604112308585198411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285045471328333801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7185440cb2a4a944abdc922d98039c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomPanelManagers:
+  - {fileID: 8202522129291093614}
+  - {fileID: 3598067195231893809}
+  - {fileID: 8783750547225902457}
+  panelIndex: 0
 --- !u!1 &5285045471377862794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,6 +7270,7 @@ MonoBehaviour:
   leftPanelGO: {fileID: 3359059408704399351}
   rightPanelGO: {fileID: 2467785407794666900}
   childPanelsGOArray: []
+  moveScrollPanelManager: {fileID: 7604112308585198411}
   animationActive: 0
 --- !u!114 &6954024264254761501
 MonoBehaviour:
@@ -7393,6 +7414,7 @@ MonoBehaviour:
   leftPanelGO: {fileID: 3225171385389354172}
   rightPanelGO: {fileID: 6585184966249077000}
   childPanelsGOArray: []
+  moveScrollPanelManager: {fileID: 7604112308585198411}
   animationActive: 0
 --- !u!114 &4518623184358818572
 MonoBehaviour:
@@ -8984,6 +9006,7 @@ MonoBehaviour:
   leftPanelGO: {fileID: 8202522128079180237}
   rightPanelGO: {fileID: 8202522128336358752}
   childPanelsGOArray: []
+  moveScrollPanelManager: {fileID: 7604112308585198411}
   animationActive: 0
 --- !u!114 &8925466827414002503
 MonoBehaviour:

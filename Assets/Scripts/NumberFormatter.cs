@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public static class NumberFormatter
 {
+
+    public static int activeRoom = 0;
+    public static int[] activeProductsRoom = {0, 0, 0, 0, 0};
     //static string[] names = { "", "", "", "млрд", "трлн", "квдрлн", "квнтлн", "секстлн", "септлн", "октлн", "нонлн", "децилн", "анд-децилн"};
     static string[] names = { "", "", "", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion"};
     public static void FormatAndRedraw (double inputNumber, TextMeshProUGUI floatText, TextMeshProUGUI stringText = null)
