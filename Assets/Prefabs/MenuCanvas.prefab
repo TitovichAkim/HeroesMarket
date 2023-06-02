@@ -3815,7 +3815,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
 --- !u!1 &5753870613187772183
 GameObject:
   m_ObjectHideFlags: 0
