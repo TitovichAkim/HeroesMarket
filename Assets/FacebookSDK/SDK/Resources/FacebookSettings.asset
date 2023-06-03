@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 
+  - 0306b38f47c68c486e852c0c261e8cd1
   appIds:
-  - 0
+  - 1298793617382354
   appLabels:
   - HeroesMarket
   cookie: 1

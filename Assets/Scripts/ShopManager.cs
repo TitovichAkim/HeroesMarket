@@ -111,6 +111,7 @@ public class ShopManager:MonoBehaviour
         _RedrawUpgradeButtons();
         _LoadManagersState();
         _LoadImprovementsStates();
+        RedrawIconsOnTheShelf();
     }
 
     public void UpgradeIndexUp ()

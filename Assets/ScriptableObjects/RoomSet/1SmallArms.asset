@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135aace93b494164c90e3816b24621cd, type: 3}
   m_Name: 1SmallArms
   m_EditorClassIdentifier: 
-  roomName: 1SmallArms
+  roomName: ARMOR
   openButtonSprite: {fileID: 21300000, guid: 506688936999f6f4fb160a33f916c158, type: 3}
-  closedButtonSprite: {fileID: 21300000, guid: d2ee6addec92c58439e906bca72a5de2, type: 3}
+  closedButtonSprite: {fileID: 21300000, guid: b7e4adcaac8add547bf19d1b60ca99c7, type: 3}
   products:
   - {fileID: 11400000, guid: 73560f5738fb413478e37d7de7eeec60, type: 2}
   - {fileID: 11400000, guid: 3556a42d751131248a9b06bc9761e43a, type: 2}
