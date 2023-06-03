@@ -426,6 +426,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  flag1Prefab: {fileID: 5850848721784434209, guid: 4090d46a864ea5f4fa9f4e966745acdd, type: 3}
+  flag2Prefab: {fileID: 5850848721784434209, guid: 0e798ea40f1fd064bb33813b82c8e1a1, type: 3}
 --- !u!114 &1710839466
 MonoBehaviour:
   m_ObjectHideFlags: 0

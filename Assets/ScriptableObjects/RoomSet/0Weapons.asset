@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135aace93b494164c90e3816b24621cd, type: 3}
   m_Name: 0Weapons
   m_EditorClassIdentifier: 
-  roomName: 0Weapons
+  roomName: WEAPON
   openButtonSprite: {fileID: 21300000, guid: 98d878362b102984c95abfbaa4ed0b8c, type: 3}
   closedButtonSprite: {fileID: 21300000, guid: c963a46135188874f8502b7e5c40c18c, type: 3}
   products:

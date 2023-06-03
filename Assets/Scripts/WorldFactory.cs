@@ -175,42 +175,14 @@ public class WorldFactory:MonoBehaviour
                 }
             }
             _roomsPanelManager[s].SwitchPanel(_roomsPanelManager[s].childPanelsGOArray[0]);
-            
+            CreateCostylFlags(_roomsPanelManager[s].leftPanelGO.transform); // Удалить вместе с чистым костылем!!!
         }
     }
-
-    //public async Task CollectManagers ()
-    //{
-    //    for(int i = 0; i < managersSOArray.Length; i++)
-    //    {
-    //        GameObject panel = Instantiate(managersPanelPrefab, _ShopManager.managersPanel.transform);
-    //        ManagerPanelManager manager = panel.GetComponent<ManagerPanelManager>();
-    //        manager.shopManager = _ShopManager;
-    //        _ShopManager.managerPanelsArray[i] = manager;
-
-    //        manager.managerSO = managersSOArray[i];
-    //    }
-    //}
-
-    //public async Task CollectImprovement ()
-    //{
-    //    for(int i = 0; i < improvementSOArray.Length; i++)
-    //    {
-    //        GameObject panel = Instantiate(improvementsPanelPrefab, _ShopManager.improvementsPanel.transform);
-    //        panel.GetComponent<ImprovementPanelManager>().improvementSO = improvementSOArray[i];
-    //        ImprovementPanelManager improvement = panel.GetComponent<ImprovementPanelManager>();
-    //        improvement.shopManager = _ShopManager;
-    //        _ShopManager.improvementPanelArray[i] = improvement;
-    //        improvement.improvementBackgroundImage.sprite = improvementBackgroundImages[improvementSOArray[i].improvementsType];
-    //        improvement.improvementSO = improvementSOArray[i];
-    //    }
-    //}
-
     public void CreateRoomButton (GameObject room, RoomSetSO set, Transform parentTransfotm, RoomsPanelManager roomsPM)
     {
         GameObject openRoomButton = Instantiate(openRoomButtonPrefab, parentTransfotm);
         room.GetComponent<AniManager>().openRoomButton = openRoomButton.GetComponent<Button>();
-
+        openRoomButton.GetComponentInChildren<TextMeshProUGUI>().text = set.roomName;
         Button button =  openRoomButton.GetComponent<Button>();
         button.onClick.AddListener(() => roomsPM.moveScrollPanelManager.OpenTargetPanelScroll(room));
         button.image.sprite = set.closedButtonSprite;
@@ -246,4 +218,15 @@ public class WorldFactory:MonoBehaviour
             trainingManager.ShowTraining();
         }
     }
+
+    #region ЧИСТОЙ ВОДЫ КОСТЫЛЬ!!! 
+    public GameObject flag1Prefab;
+    public GameObject flag2Prefab;
+
+    void CreateCostylFlags (Transform parentTransfotm)
+    {
+        GameObject open1RoomButton = Instantiate(flag1Prefab, parentTransfotm);
+        GameObject open2RoomButton = Instantiate(flag2Prefab, parentTransfotm);
+    }
+    #endregion
 }

@@ -11,6 +11,19 @@ public class MenuManager : MonoBehaviour
 {
     public Text[] revenuePanelTexts;
     public Text timerText;
+
+    public TextMeshProUGUI volumeNumberText;
+    public TextMeshProUGUI musicNumberText;
+    public GameObject volumeIconImage;
+    public GameObject volumeOffIconImage;
+    public GameObject MusicIconImage;
+    public GameObject MusicOffIconImage;
+    public AudioSource backgroundAudioSource;
+    public AudioListener audioListener;
+    public Slider volumeSlider;
+    public Slider musicSlider;
+
+
     public TextMeshProUGUI rewardText;
     public ShopManager shopManager;
     public GameObject ReturnPanel;
@@ -29,6 +42,15 @@ public class MenuManager : MonoBehaviour
         } else
         {
             StartCoroutine(SaveTheMoment());
+        }
+
+        if(PlayerPrefs.HasKey("Volume"))
+        {
+            SetTheVolume(true);
+        }
+        if(PlayerPrefs.HasKey("MusicVolume"))
+        {
+            SetTheVolumeOfTheMusic(true);
         }
     }
     public void CollectTheReward ()
@@ -79,5 +101,42 @@ public class MenuManager : MonoBehaviour
     public void Exit ()
     {
         Application.Quit();
+    }
+
+    public void SetTheVolume (bool loading)
+    {
+        float number = 10;
+        if (loading)
+        {
+            number = PlayerPrefs.GetFloat("Volume");
+            volumeSlider.value = number;
+        }
+        else
+        {
+            number = volumeSlider.value;
+        }
+        PlayerPrefs.SetFloat("Volume", number);
+        AudioListener.volume = (float)number/10;
+        volumeNumberText.text = number.ToString();
+        volumeIconImage.SetActive(number > 0);
+        volumeOffIconImage.SetActive(number <= 0);
+    }
+    public void SetTheVolumeOfTheMusic (bool loading)
+    {
+        float number = 10;
+        if(loading)
+        {
+            number = PlayerPrefs.GetFloat("MusicVolume");
+            musicSlider.value = number;
+        }
+        else
+        {
+            number = musicSlider.value;
+        }
+        PlayerPrefs.SetFloat("MusicVolume", number);
+        backgroundAudioSource.volume = number/10;
+        musicNumberText.text = number.ToString();
+        MusicIconImage.SetActive(number > 0);
+        MusicOffIconImage.SetActive(number <= 0);
     }
 }
