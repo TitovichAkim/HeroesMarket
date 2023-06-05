@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: POTIONS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
-  m_sharedMaterial: {fileID: 3447155367056874904, guid: ae0152777796c7d4fad906f63f06ecc8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d3f9cb965d915a2408b8830c78c2afa3, type: 2}
+  m_sharedMaterial: {fileID: -1326253528986419107, guid: d3f9cb965d915a2408b8830c78c2afa3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
